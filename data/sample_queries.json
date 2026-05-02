@@ -1,0 +1,52 @@
+[
+  {
+    "id": "q001",
+    "query": "OPC 43 grade cement for reinforced concrete building construction",
+    "expected_standards": ["IS 8112:2013", "IS 456:2000", "IS 10262:2019"]
+  },
+  {
+    "id": "q002",
+    "query": "TMT steel bars Fe500D for earthquake resistant RCC structure in seismic zone V",
+    "expected_standards": ["IS 1786:2008", "IS 1893 (Part 1):2016", "IS 13920:2016"]
+  },
+  {
+    "id": "q003",
+    "query": "Coarse aggregate 20mm size for M30 concrete mix",
+    "expected_standards": ["IS 383:2016", "IS 2386 (Part 4):1963", "IS 10262:2019"]
+  },
+  {
+    "id": "q004",
+    "query": "Burnt clay bricks for load bearing wall construction",
+    "expected_standards": ["IS 1077:1992", "IS 2212:1991"]
+  },
+  {
+    "id": "q005",
+    "query": "Portland Pozzolana Cement for marine structure and underground foundation",
+    "expected_standards": ["IS 1489 (Part 1):2015", "IS 456:2000"]
+  },
+  {
+    "id": "q006",
+    "query": "Concrete admixture superplasticizer for self compacting concrete",
+    "expected_standards": ["IS 9103:1999", "IS 456:2000"]
+  },
+  {
+    "id": "q007",
+    "query": "Structural steel I beam sections for industrial warehouse",
+    "expected_standards": ["IS 2062:2011", "IS 808:1989"]
+  },
+  {
+    "id": "q008",
+    "query": "Hollow concrete blocks for non-load bearing partition walls in apartments",
+    "expected_standards": ["IS 2185 (Part 1):2005"]
+  },
+  {
+    "id": "q009",
+    "query": "Rebound hammer test for concrete quality assessment on site",
+    "expected_standards": ["IS 13311 (Part 2):1992"]
+  },
+  {
+    "id": "q010",
+    "query": "Low heat cement for dam construction to avoid thermal cracking",
+    "expected_standards": ["IS 12600:1989", "IS 515:1959"]
+  }
+]

@@ -1,0 +1,979 @@
+[
+  {
+    "id": "BIS_CEM_001",
+    "standard_number": "IS 269:2015",
+    "title": "Ordinary Portland Cement, 33 Grade — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for Ordinary Portland Cement (OPC) 33 Grade, the most commonly used general-purpose cement in India. Covers chemical composition, physical properties, setting time, soundness, and compressive strength requirements for cement used in general construction, plastering, and non-structural applications.",
+    "scope": "Applicable to OPC 33 Grade cement used in general construction, flooring, plastering, masonry, and non-aggressive environments where moderate strength is sufficient.",
+    "key_requirements": [
+      "Minimum 28-day compressive strength: 33 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness (Le Chatelier): maximum 10 mm",
+      "Loss on ignition: maximum 5%",
+      "Insoluble residue: maximum 2%",
+      "Magnesia (MgO): maximum 6%",
+      "Sulphuric anhydride (SO3): maximum 3.5%"
+    ],
+    "applicable_products": [
+      "General purpose concrete",
+      "Masonry mortar",
+      "Plastering work",
+      "Non-structural concrete members",
+      "Flooring screed",
+      "Tile fixing mortar"
+    ],
+    "year": 2015,
+    "keywords": ["OPC 33", "ordinary portland cement", "33 grade", "general purpose cement", "masonry", "plastering", "mortar", "concrete", "low strength cement"],
+    "text": "IS 269:2015 Ordinary Portland Cement 33 Grade OPC general construction masonry plastering mortar compressive strength 33 N/mm² setting time soundness magnesia sulphate cement specification building materials"
+  },
+  {
+    "id": "BIS_CEM_002",
+    "standard_number": "IS 8112:2013",
+    "title": "Ordinary Portland Cement, 43 Grade — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for Ordinary Portland Cement (OPC) 43 Grade, widely used for reinforced concrete structures, precast elements, and high-strength applications. This grade offers improved strength properties suitable for structural concrete, bridges, and multi-storey buildings.",
+    "scope": "Applicable to OPC 43 Grade cement for reinforced concrete construction, precast concrete elements, high-rise buildings, bridges, and infrastructure projects requiring moderate to high strength.",
+    "key_requirements": [
+      "Minimum 28-day compressive strength: 43 N/mm²",
+      "Minimum 3-day compressive strength: 23 N/mm²",
+      "Minimum 7-day compressive strength: 33 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness (Le Chatelier): maximum 10 mm",
+      "Fineness (specific surface): minimum 225 m²/kg",
+      "Loss on ignition: maximum 5%"
+    ],
+    "applicable_products": [
+      "Reinforced concrete structures",
+      "Precast concrete elements",
+      "Multi-storey building construction",
+      "Road construction",
+      "Industrial flooring",
+      "Bridge construction"
+    ],
+    "year": 2013,
+    "keywords": ["OPC 43", "ordinary portland cement", "43 grade", "reinforced concrete", "structural cement", "high strength", "precast", "bridge", "multi-storey"],
+    "text": "IS 8112:2013 Ordinary Portland Cement 43 Grade OPC reinforced concrete structural precast high-rise building bridge infrastructure compressive strength 43 N/mm² setting time fineness specification building materials"
+  },
+  {
+    "id": "BIS_CEM_003",
+    "standard_number": "IS 12269:2013",
+    "title": "Ordinary Portland Cement, 53 Grade — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for Ordinary Portland Cement (OPC) 53 Grade, the highest strength grade of OPC, used for critical high-strength applications. This grade is used in high-performance concrete, prestressed concrete, and wherever early high strength development is required.",
+    "scope": "Applicable to OPC 53 Grade cement for high-strength concrete, prestressed concrete, high-rise structures, runways, and situations requiring rapid strength gain.",
+    "key_requirements": [
+      "Minimum 28-day compressive strength: 53 N/mm²",
+      "Minimum 3-day compressive strength: 27 N/mm²",
+      "Minimum 7-day compressive strength: 37 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness (Le Chatelier): maximum 10 mm",
+      "Fineness (specific surface): minimum 225 m²/kg",
+      "C3S + C2S: minimum 66%"
+    ],
+    "applicable_products": [
+      "High-strength concrete (M40 and above)",
+      "Prestressed concrete",
+      "High-rise buildings (above 10 storeys)",
+      "Airport runways and taxiways",
+      "Marine structures",
+      "Heavy industrial floors"
+    ],
+    "year": 2013,
+    "keywords": ["OPC 53", "ordinary portland cement", "53 grade", "high strength", "prestressed concrete", "M40 M50 M60", "runway", "marine", "rapid hardening"],
+    "text": "IS 12269:2013 Ordinary Portland Cement 53 Grade highest strength OPC prestressed concrete high-rise airport runway marine structures M40 M50 high performance rapid strength gain specification"
+  },
+  {
+    "id": "BIS_CEM_004",
+    "standard_number": "IS 1489 (Part 1):2015",
+    "title": "Portland Pozzolana Cement — Specification: Part 1 Fly Ash Based",
+    "category": "Cement",
+    "description": "Specifies requirements for Portland Pozzolana Cement (PPC) using fly ash as a pozzolanic material. PPC provides improved workability, reduced heat of hydration, and better resistance to chemical attack, making it ideal for mass concrete and marine structures.",
+    "scope": "Applicable to fly ash based PPC for mass concrete, hydraulic structures, marine works, foundations, and large structural elements where reduced heat of hydration is beneficial.",
+    "key_requirements": [
+      "Fly ash content: 15% to 35% by mass",
+      "Minimum 28-day compressive strength: 33 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness (Le Chatelier): maximum 10 mm",
+      "Loss on ignition of fly ash: maximum 12%",
+      "Lime reactivity of fly ash: minimum 4.5 N/mm²"
+    ],
+    "applicable_products": [
+      "Mass concrete (dams, large foundations)",
+      "Marine and hydraulic structures",
+      "Underground construction",
+      "Sewerage and drainage works",
+      "Retaining walls",
+      "Sustainable construction with fly ash"
+    ],
+    "year": 2015,
+    "keywords": ["PPC", "portland pozzolana cement", "fly ash cement", "pozzolana", "mass concrete", "marine", "hydraulic", "sustainable", "low heat"],
+    "text": "IS 1489 Part 1 Portland Pozzolana Cement fly ash PPC mass concrete marine hydraulic structures reduced heat of hydration sustainable green construction fly ash based specification"
+  },
+  {
+    "id": "BIS_CEM_005",
+    "standard_number": "IS 1489 (Part 2):2015",
+    "title": "Portland Pozzolana Cement — Specification: Part 2 Calcined Clay Based",
+    "category": "Cement",
+    "description": "Specifies requirements for Portland Pozzolana Cement (PPC) using calcined clay (metakaolin) as the pozzolanic material. This cement has good workability and resistance to sulphate attack, suitable for use in areas without ready availability of fly ash.",
+    "scope": "Applicable to calcined clay based PPC for general construction, foundations, and structures in aggressive environments where sulphate resistance is required.",
+    "key_requirements": [
+      "Calcined clay content: 15% to 25% by mass",
+      "Minimum 28-day compressive strength: 33 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness: maximum 10 mm"
+    ],
+    "applicable_products": [
+      "General building construction",
+      "Foundations in sulphate-bearing soils",
+      "Rural construction",
+      "Plastering and masonry"
+    ],
+    "year": 2015,
+    "keywords": ["PPC", "portland pozzolana cement", "calcined clay", "metakaolin", "sulphate resistance", "general construction"],
+    "text": "IS 1489 Part 2 Portland Pozzolana Cement calcined clay metakaolin pozzolana sulphate resistance general construction foundations specification"
+  },
+  {
+    "id": "BIS_CEM_006",
+    "standard_number": "IS 455:2015",
+    "title": "Portland Slag Cement — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for Portland Slag Cement (PSC) made by intergrinding Portland cement clinker, gypsum, and granulated blast furnace slag. PSC offers excellent sulphate resistance, low heat of hydration, and high long-term strength, making it ideal for marine and underground structures.",
+    "scope": "Applicable to PSC for marine structures, underground works, water retaining structures, mass concrete, and construction in aggressive chemical environments.",
+    "key_requirements": [
+      "Slag content: 25% to 65% by mass",
+      "Minimum 28-day compressive strength: 33 N/mm²",
+      "Initial setting time: minimum 30 minutes",
+      "Final setting time: maximum 600 minutes",
+      "Soundness (Le Chatelier): maximum 10 mm",
+      "Insoluble residue: maximum 4%"
+    ],
+    "applicable_products": [
+      "Marine and harbour structures",
+      "Underground structures in aggressive soils",
+      "Water retaining structures",
+      "Mass concrete foundations",
+      "Industrial flooring in chemical plants"
+    ],
+    "year": 2015,
+    "keywords": ["PSC", "portland slag cement", "blast furnace slag", "sulphate resistance", "marine", "underground", "water retaining", "low heat"],
+    "text": "IS 455:2015 Portland Slag Cement PSC blast furnace slag sulphate resistance marine underground water retaining mass concrete aggressive environment specification"
+  },
+  {
+    "id": "BIS_CEM_007",
+    "standard_number": "IS 6452:1989",
+    "title": "High Alumina Cement for Structural Use — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for High Alumina Cement (HAC), which achieves very high early strength and has excellent resistance to high temperatures and chemical attack. HAC is used in refractory applications, industrial kilns, and where rapid strength development under challenging conditions is required.",
+    "scope": "Applicable to HAC for refractory concrete, industrial kiln linings, emergency repair works requiring rapid strength gain, and chemically aggressive environments.",
+    "key_requirements": [
+      "Alumina (Al2O3) content: minimum 32%",
+      "Minimum 24-hour compressive strength: 35 N/mm²",
+      "Initial setting time: minimum 2 hours",
+      "Final setting time: maximum 10 hours",
+      "Refractoriness: minimum 1480°C"
+    ],
+    "applicable_products": [
+      "Refractory concrete and castables",
+      "Industrial kiln linings",
+      "Emergency structural repairs",
+      "Chemical plant flooring",
+      "Sewage structures"
+    ],
+    "year": 1989,
+    "keywords": ["HAC", "high alumina cement", "refractory", "heat resistant", "chemical resistant", "rapid hardening", "kiln", "emergency repair"],
+    "text": "IS 6452:1989 High Alumina Cement HAC refractory heat resistant chemical resistant rapid hardening kiln industrial emergency repair specification"
+  },
+  {
+    "id": "BIS_CEM_008",
+    "standard_number": "IS 12600:1989",
+    "title": "Low Heat Portland Cement — Specification",
+    "category": "Cement",
+    "description": "Specifies requirements for Low Heat Portland Cement (LHPC), designed to minimize heat generation during hydration for use in large mass concrete structures. This cement reduces thermal cracking in dams, thick foundations, and massive concrete pours.",
+    "scope": "Applicable to LHPC for large concrete dams, thick raft foundations, gravity structures, and any massive concrete pour where heat of hydration must be controlled.",
+    "key_requirements": [
+      "Heat of hydration at 7 days: maximum 272 J/g",
+      "Heat of hydration at 28 days: maximum 314 J/g",
+      "Minimum 28-day compressive strength: 35 N/mm²",
+      "C3A content: maximum 6%",
+      "C3S content: maximum 35%",
+      "Initial setting time: minimum 60 minutes"
+    ],
+    "applicable_products": [
+      "Concrete dams",
+      "Thick raft foundations",
+      "Large gravity retaining walls",
+      "Massive concrete machine foundations"
+    ],
+    "year": 1989,
+    "keywords": ["LHPC", "low heat portland cement", "mass concrete", "dam", "thermal cracking", "heat of hydration", "thick foundation"],
+    "text": "IS 12600:1989 Low Heat Portland Cement LHPC mass concrete dam thick foundation heat of hydration thermal cracking gravity structure specification"
+  },
+  {
+    "id": "BIS_STL_001",
+    "standard_number": "IS 1786:2008",
+    "title": "High Strength Deformed Steel Bars and Wires for Concrete Reinforcement — Specification",
+    "category": "Steel",
+    "description": "Specifies requirements for High Strength Deformed (HSD) steel bars and wires, commonly known as TMT (Thermo-Mechanically Treated) bars, HYSD bars, and Fe415/Fe500/Fe500D/Fe550/Fe600 grade bars used as reinforcement in concrete structures. This is the primary standard for reinforcement steel in India.",
+    "scope": "Applicable to deformed steel bars and wires used as reinforcement in plain and reinforced concrete structures, including buildings, bridges, dams, and all civil engineering works.",
+    "key_requirements": [
+      "Fe415: yield strength ≥ 415 N/mm², UTS ≥ 485 N/mm², elongation ≥ 14.5%",
+      "Fe500: yield strength ≥ 500 N/mm², UTS ≥ 545 N/mm², elongation ≥ 12%",
+      "Fe500D: yield strength ≥ 500 N/mm², UTS ≥ 565 N/mm², elongation ≥ 16%",
+      "Fe550: yield strength ≥ 550 N/mm², UTS ≥ 585 N/mm², elongation ≥ 10%",
+      "Fe600: yield strength ≥ 600 N/mm², UTS ≥ 660 N/mm², elongation ≥ 10%",
+      "Rib geometry requirements for bond performance",
+      "Chemical composition limits (C, Mn, S, P, CEV)",
+      "Bend and rebend test requirements"
+    ],
+    "applicable_products": [
+      "RCC building columns, beams, slabs",
+      "Foundation reinforcement",
+      "Bridge decks and piers",
+      "Retaining walls",
+      "Prestressed concrete structures",
+      "Industrial structures"
+    ],
+    "year": 2008,
+    "keywords": ["TMT bars", "HYSD bars", "deformed bars", "reinforcement steel", "Fe415", "Fe500", "Fe500D", "Fe550", "Fe600", "rebar", "rebars", "concrete reinforcement"],
+    "text": "IS 1786:2008 High Strength Deformed Steel Bars TMT HYSD reinforcement Fe415 Fe500 Fe500D Fe550 Fe600 concrete buildings bridges yield strength tensile elongation specification"
+  },
+  {
+    "id": "BIS_STL_002",
+    "standard_number": "IS 432 (Part 1):1982",
+    "title": "Mild Steel and Medium Tensile Steel Bars and Hard Drawn Steel Wire for Concrete Reinforcement — Mild Steel Bars",
+    "category": "Steel",
+    "description": "Specifies requirements for mild steel (MS) plain round bars used as reinforcement in concrete, designated as Fe250. Though largely superseded by HYSD bars, MS bars are still used in certain applications and older structure repairs.",
+    "scope": "Applicable to plain mild steel bars for concrete reinforcement in low-stress applications, repairs to existing structures, and where plain round bars are specifically required.",
+    "key_requirements": [
+      "Fe250: yield strength ≥ 250 N/mm²",
+      "Ultimate tensile strength: ≥ 410 N/mm²",
+      "Elongation: minimum 23%",
+      "Carbon content: maximum 0.25%",
+      "Sulphur content: maximum 0.055%",
+      "Phosphorus content: maximum 0.055%"
+    ],
+    "applicable_products": [
+      "Light reinforcement in plastering",
+      "Stirrups and links in small structures",
+      "Repair of old structures",
+      "Wire mesh for plaster reinforcement"
+    ],
+    "year": 1982,
+    "keywords": ["mild steel bars", "MS bars", "Fe250", "plain round bars", "low strength reinforcement"],
+    "text": "IS 432 Part 1 Mild Steel Bars Fe250 plain round bars reinforcement concrete low strength light applications specification"
+  },
+  {
+    "id": "BIS_STL_003",
+    "standard_number": "IS 2062:2011",
+    "title": "Hot Rolled Medium and High Tensile Structural Steel — Specification",
+    "category": "Steel",
+    "description": "Specifies requirements for hot rolled structural steel plates, sections (I-beams, columns, channels, angles), and flats used in steel structures. Covers grades E250, E300, E350, E410, E450, E550 suitable for different structural applications including buildings, bridges, and industrial structures.",
+    "scope": "Applicable to hot rolled structural steel for use in fabricated steel structures, industrial buildings, storage tanks, bridges, and all steel fabrication work.",
+    "key_requirements": [
+      "E250: yield strength ≥ 250 N/mm², UTS 410-540 N/mm²",
+      "E350: yield strength ≥ 350 N/mm², UTS 490-630 N/mm²",
+      "E450: yield strength ≥ 450 N/mm², UTS 570-720 N/mm²",
+      "Charpy impact test requirements at 0°C and -20°C",
+      "Carbon equivalent (CEV) limits for weldability",
+      "Dimensional tolerances per IS 1852 and IS 3803"
+    ],
+    "applicable_products": [
+      "Steel framed buildings",
+      "Industrial sheds and warehouses",
+      "Steel bridges and flyovers",
+      "Storage tanks and silos",
+      "Transmission towers",
+      "Railway bridges"
+    ],
+    "year": 2011,
+    "keywords": ["structural steel", "hot rolled steel", "I-beam", "steel column", "steel section", "E250", "E350", "E450", "steel fabrication", "steel structure"],
+    "text": "IS 2062:2011 Hot Rolled Structural Steel E250 E350 E450 plates sections I-beam column steel buildings bridges industrial structures weldability specification"
+  },
+  {
+    "id": "BIS_STL_004",
+    "standard_number": "IS 808:1989",
+    "title": "Dimensions for Hot Rolled Steel Beam, Column, Channel and Angle Sections — Specification",
+    "category": "Steel",
+    "description": "Specifies standard dimensions and tolerances for hot rolled steel sections including I-beams (ISMB, ISWB), column sections (ISHB), channel sections (ISMC), and angle sections (ISA). This standard defines the dimensional catalog for steel structural sections used across India.",
+    "scope": "Applicable to the selection and specification of standard hot rolled steel sections for structural steel design and construction.",
+    "key_requirements": [
+      "Standard dimensions for ISMB (Medium Weight Beam) sections",
+      "Standard dimensions for ISWB (Wide Flange Beam) sections",
+      "Standard dimensions for ISHB (Column) sections",
+      "Standard dimensions for ISMC (Channel) sections",
+      "Standard dimensions for ISA (Angle) sections",
+      "Weight, sectional area, moment of inertia, section modulus tabulation"
+    ],
+    "applicable_products": [
+      "Steel beams for floors and roofs",
+      "Steel columns for frames",
+      "Purlins and girts",
+      "Bracings and connections",
+      "Staircases and platforms"
+    ],
+    "year": 1989,
+    "keywords": ["steel sections", "ISMB", "ISWB", "ISHB", "ISMC", "ISA", "I-beam dimensions", "steel column dimensions", "angle sections", "channel sections"],
+    "text": "IS 808:1989 Dimensions Hot Rolled Steel Sections ISMB ISWB ISHB column channel angle beam standard sizes dimensions specification"
+  },
+  {
+    "id": "BIS_STL_005",
+    "standard_number": "IS 3502:2009",
+    "title": "Steel Chequered Plates — Specification",
+    "category": "Steel",
+    "description": "Specifies requirements for hot rolled steel chequered (tread) plates with raised pattern for improved slip resistance. Used in flooring applications, platforms, stair treads, and industrial walkways where anti-skid properties are required.",
+    "scope": "Applicable to steel chequered plates for flooring, platforms, stair treads, ramps, and industrial walkways.",
+    "key_requirements": [
+      "Pattern height: 1.2 to 3.5 mm depending on plate thickness",
+      "Thickness range: 3 mm to 12 mm",
+      "Width: 600 mm to 1800 mm",
+      "Steel grade: as per IS 2062",
+      "Surface quality and dimensional tolerances"
+    ],
+    "applicable_products": [
+      "Industrial walkways and platforms",
+      "Stair treads",
+      "Loading ramps",
+      "Machine room flooring",
+      "Ship decking"
+    ],
+    "year": 2009,
+    "keywords": ["chequered plates", "tread plates", "anti-skid flooring", "steel floor plates", "diamond plate", "industrial flooring"],
+    "text": "IS 3502:2009 Steel Chequered Plates anti-skid flooring platforms stair treads industrial walkways diamond pattern specification"
+  },
+  {
+    "id": "BIS_CON_001",
+    "standard_number": "IS 456:2000",
+    "title": "Plain and Reinforced Concrete — Code of Practice",
+    "category": "Concrete",
+    "description": "The primary Indian standard code of practice for design and construction of plain and reinforced concrete structures. IS 456:2000 covers concrete mixes, durability requirements, concrete mix design, construction practices, quality control, and design provisions for all grades from M10 to M50 and beyond.",
+    "scope": "Applicable to all plain and reinforced concrete construction including buildings, bridges, foundations, and all civil engineering works. Mandatory reference for structural concrete design in India.",
+    "key_requirements": [
+      "Concrete grades: M10, M15, M20, M25, M30, M35, M40, M45, M50 (characteristic strength at 28 days)",
+      "Minimum grade M20 for RCC structures",
+      "Minimum cement content based on exposure conditions",
+      "Maximum water-cement ratio: 0.40 to 0.55 based on exposure",
+      "Cover to reinforcement: nominal cover as per exposure class",
+      "Slump requirements for workability",
+      "Acceptance criteria: cube strength at 28 days",
+      "Durability requirements for aggressive environments"
+    ],
+    "applicable_products": [
+      "Structural concrete for buildings",
+      "Foundation concrete",
+      "Concrete for bridges",
+      "Industrial floors",
+      "All RCC construction"
+    ],
+    "year": 2000,
+    "keywords": ["RCC code", "reinforced concrete", "plain concrete", "M20 M25 M30", "concrete grade", "water cement ratio", "cover to reinforcement", "durability", "concrete design"],
+    "text": "IS 456:2000 Plain Reinforced Concrete Code Practice M10 M15 M20 M25 M30 M40 concrete grade design water cement ratio cover reinforcement durability slump construction"
+  },
+  {
+    "id": "BIS_CON_002",
+    "standard_number": "IS 10262:2019",
+    "title": "Concrete Mix Proportioning — Guidelines",
+    "category": "Concrete",
+    "description": "Provides guidelines for proportioning concrete mixes to achieve specified target mean strength, workability, and durability. Covers the step-by-step procedure for nominal and design mix concrete, selection of water content, cement content, and aggregate proportions.",
+    "scope": "Applicable to design of concrete mixes for all grades of concrete from M10 to M60 and above in buildings, infrastructure, and specialty construction.",
+    "key_requirements": [
+      "Target mean strength = fck + 1.65σ (σ = standard deviation)",
+      "Selection of water-cement ratio from IS 456 durability tables",
+      "Estimation of water content based on aggregate size and slump",
+      "Calculation of cement content (not less than minimum from IS 456)",
+      "Volume of coarse aggregate by fine aggregate ratio",
+      "Trial mix verification and field adjustments",
+      "Adjustment for moisture in aggregates",
+      "Mix proportioning for blended cements (fly ash, slag)"
+    ],
+    "applicable_products": [
+      "Design mix concrete for all structural grades",
+      "High performance concrete",
+      "Self-compacting concrete",
+      "Ready-mix concrete plants"
+    ],
+    "year": 2019,
+    "keywords": ["concrete mix design", "mix proportioning", "design mix", "target mean strength", "water cement ratio", "aggregate ratio", "M20 mix", "high strength concrete mix"],
+    "text": "IS 10262:2019 Concrete Mix Proportioning design mix water cement ratio target strength aggregate gradation workability trial mix specification guidelines"
+  },
+  {
+    "id": "BIS_CON_003",
+    "standard_number": "IS 516:2018",
+    "title": "Hardened Concrete — Methods of Test",
+    "category": "Concrete",
+    "description": "Specifies methods for testing hardened concrete including preparation of test specimens (cubes, cylinders, beams), compressive strength testing, flexural strength testing, and splitting tensile strength testing. This is the standard for quality control testing of concrete in the field and laboratory.",
+    "scope": "Applicable to testing of hardened concrete specimens for quality control, acceptance, and research purposes on all construction sites and in concrete testing laboratories.",
+    "key_requirements": [
+      "Standard cube size: 150 mm × 150 mm × 150 mm",
+      "Cylinder size: 150 mm dia × 300 mm height",
+      "Curing: 28 days in water at 27±2°C",
+      "Loading rate for compressive strength: 140 kg/cm²/min",
+      "Beam dimensions for flexural test: 150 × 150 × 700 mm",
+      "Number of test specimens: minimum 3 per batch",
+      "Testing at 3, 7, and 28 days"
+    ],
+    "applicable_products": [
+      "Quality control of concrete on construction sites",
+      "Acceptance testing of concrete",
+      "Investigation of existing structures"
+    ],
+    "year": 2018,
+    "keywords": ["concrete testing", "cube test", "compressive strength", "concrete quality control", "cylinder test", "flexural test", "28-day strength"],
+    "text": "IS 516:2018 Hardened Concrete Methods of Test cube strength compressive flexural splitting quality control acceptance testing 28 days specification"
+  },
+  {
+    "id": "BIS_CON_004",
+    "standard_number": "IS 9103:1999",
+    "title": "Concrete Admixtures — Specification",
+    "category": "Concrete",
+    "description": "Specifies requirements and testing methods for chemical admixtures added to concrete to modify its properties during mixing, placement, or curing. Covers accelerating, retarding, water-reducing (plasticizer), superplasticizer, and air-entraining admixtures.",
+    "scope": "Applicable to chemical admixtures for concrete used to modify workability, strength, durability, or setting characteristics in construction applications.",
+    "key_requirements": [
+      "Classification: Type A (Water reducing), Type B (Retarding), Type C (Accelerating), Type D (Water reducing & retarding), Type E (Water reducing & accelerating), Type F (High range water reducing / Superplasticizer)",
+      "Water reduction: Type A minimum 5%, Type F minimum 12%",
+      "Strength at 28 days: minimum 110% of control mix",
+      "Setting time requirements based on type",
+      "Compatibility with cement and other admixtures",
+      "Chloride content: maximum 0.2% by mass of cement"
+    ],
+    "applicable_products": [
+      "Ready-mix concrete",
+      "High performance concrete",
+      "Self-compacting concrete (SCC)",
+      "Pump concrete",
+      "Hot weather concreting",
+      "Cold weather concreting"
+    ],
+    "year": 1999,
+    "keywords": ["admixture", "concrete admixture", "plasticizer", "superplasticizer", "water reducer", "retarder", "accelerator", "chemical admixture", "SCC", "pump concrete"],
+    "text": "IS 9103:1999 Concrete Admixtures plasticizer superplasticizer water reducer retarder accelerator ready-mix SCC pump chemical specification"
+  },
+  {
+    "id": "BIS_CON_005",
+    "standard_number": "IS 3812 (Part 1):2003",
+    "title": "Pulverized Fuel Ash — Specification: Part 1 For Use as Pozzolana in Cement, Cement Mortar and Concrete",
+    "category": "Concrete",
+    "description": "Specifies requirements for pulverized fuel ash (PFA/fly ash) used as a pozzolanic admixture in cement, mortar, and concrete. Fly ash improves workability, reduces heat of hydration, enhances long-term strength, and improves durability of concrete.",
+    "scope": "Applicable to fly ash used as partial replacement for cement or as a supplementary cementitious material (SCM) in concrete and cement mortar.",
+    "key_requirements": [
+      "Silicon dioxide + aluminium oxide + iron oxide: minimum 70%",
+      "Magnesium oxide: maximum 5%",
+      "Sulphur trioxide: maximum 3%",
+      "Loss on ignition: maximum 12%",
+      "Lime reactivity: minimum 4.5 N/mm²",
+      "Fineness (45 μm sieve): maximum 34% retained",
+      "Soundness (Le Chatelier): maximum 10 mm"
+    ],
+    "applicable_products": [
+      "Blended concrete with fly ash (15-30% replacement)",
+      "PPC and Portland Fly Ash Cement production",
+      "Mass concrete",
+      "Concrete in aggressive environments"
+    ],
+    "year": 2003,
+    "keywords": ["fly ash", "pulverized fuel ash", "PFA", "pozzolana", "supplementary cementitious material", "SCM", "cement replacement", "green concrete"],
+    "text": "IS 3812 Part 1 Fly Ash Pulverized Fuel Ash PFA pozzolana supplementary cementitious material cement replacement blended concrete mass green specification"
+  },
+  {
+    "id": "BIS_CON_006",
+    "standard_number": "IS 13311 (Part 1):1992",
+    "title": "Non-Destructive Testing of Concrete — Methods of Test: Part 1 Ultrasonic Pulse Velocity",
+    "category": "Concrete",
+    "description": "Specifies the method for non-destructive testing (NDT) of concrete using ultrasonic pulse velocity (UPV) to assess concrete quality, uniformity, and detect internal defects such as cracks, voids, and honeycombing without damaging the structure.",
+    "scope": "Applicable to NDT assessment of existing concrete structures, precast elements, and quality control on construction sites.",
+    "key_requirements": [
+      "UPV ≥ 4.5 km/s: Excellent concrete quality",
+      "UPV 3.5-4.5 km/s: Good quality",
+      "UPV 3.0-3.5 km/s: Medium quality",
+      "UPV < 3.0 km/s: Doubtful quality",
+      "Transducer frequency: 50-200 kHz typically used",
+      "Minimum path length: 150 mm for direct method"
+    ],
+    "applicable_products": [
+      "Assessment of existing building structures",
+      "Quality check of precast elements",
+      "Detection of cracks and voids",
+      "Investigation of distressed concrete"
+    ],
+    "year": 1992,
+    "keywords": ["NDT", "ultrasonic pulse velocity", "UPV", "non-destructive testing", "concrete quality", "concrete assessment", "crack detection"],
+    "text": "IS 13311 Part 1 Ultrasonic Pulse Velocity UPV Non-Destructive Testing NDT concrete quality uniformity crack void detection assessment specification"
+  },
+  {
+    "id": "BIS_CON_007",
+    "standard_number": "IS 13311 (Part 2):1992",
+    "title": "Non-Destructive Testing of Concrete — Methods of Test: Part 2 Rebound Hammer",
+    "category": "Concrete",
+    "description": "Specifies the method for non-destructive testing of concrete using a rebound hammer (Schmidt hammer) to estimate surface hardness and approximate compressive strength of concrete in situ without damaging the structure.",
+    "scope": "Applicable to quick assessment of concrete surface strength, uniformity checks on large structures, and preliminary investigation of existing structures.",
+    "key_requirements": [
+      "Rebound number range: 10 to 100",
+      "Surface must be smooth and dry",
+      "Take minimum 10 readings per test location",
+      "Discard readings differing by more than 6 units from median",
+      "Apply correction for hammer angle and carbonation depth",
+      "Correlation chart specific to the type of hammer used"
+    ],
+    "applicable_products": [
+      "In-situ strength assessment of concrete",
+      "Uniformity check of concrete in structures",
+      "Investigation of existing structures"
+    ],
+    "year": 1992,
+    "keywords": ["rebound hammer", "Schmidt hammer", "NDT concrete", "non-destructive testing", "in-situ strength", "surface hardness"],
+    "text": "IS 13311 Part 2 Rebound Hammer Schmidt NDT non-destructive testing concrete in-situ strength surface hardness assessment specification"
+  },
+  {
+    "id": "BIS_AGG_001",
+    "standard_number": "IS 383:2016",
+    "title": "Coarse and Fine Aggregates for Concrete — Specification",
+    "category": "Aggregates",
+    "description": "The primary specification for natural sand, crushed stone, gravel, and manufactured sand (M-Sand) used as fine and coarse aggregates in concrete. Covers particle size distribution, shape, cleanliness, physical and chemical properties that determine the quality and suitability of aggregates for concrete production.",
+    "scope": "Applicable to all natural and manufactured aggregates (fine and coarse) used in plain and reinforced concrete, including river sand, manufactured sand, crushed stone, and gravel.",
+    "key_requirements": [
+      "Fine aggregate zones: Zone I (coarser) to Zone IV (finer)",
+      "Fineness modulus of fine aggregate: 2.0 to 3.5",
+      "Silt content (field test): maximum 8%",
+      "Organic impurities: maximum colorimetric test limit",
+      "Aggregate crushing value: maximum 45% for concrete, 30% for wearing surfaces",
+      "Impact value: maximum 45% for concrete",
+      "Los Angeles abrasion value: maximum 50%",
+      "Flakiness + Elongation index: maximum 35%",
+      "Water absorption: maximum 2%"
+    ],
+    "applicable_products": [
+      "Concrete mix design aggregate",
+      "River sand for concrete",
+      "Manufactured sand (M-Sand) for concrete",
+      "Crushed stone aggregate",
+      "All grades of concrete from M10 to M80+"
+    ],
+    "year": 2016,
+    "keywords": ["aggregate", "fine aggregate", "coarse aggregate", "river sand", "M-sand", "crushed stone", "gravel", "sieve analysis", "fineness modulus", "aggregate testing"],
+    "text": "IS 383:2016 Coarse Fine Aggregates Concrete river sand M-sand manufactured sand crushed stone gravel sieve analysis fineness modulus crushing value specification"
+  },
+  {
+    "id": "BIS_AGG_002",
+    "standard_number": "IS 2386 (Part 1):1963",
+    "title": "Methods of Test for Aggregates for Concrete: Part 1 Particle Size and Shape",
+    "category": "Aggregates",
+    "description": "Specifies methods of test for determining particle size distribution (sieve analysis), particle shape (flakiness index and elongation index), and angularity number of aggregates used in concrete. Essential for evaluating aggregate gradation and compliance with IS 383.",
+    "scope": "Applicable to testing of coarse and fine aggregates for concrete to verify particle size distribution and shape parameters.",
+    "key_requirements": [
+      "Sieve analysis using standard IS sieves (80, 63, 40, 20, 12.5, 10, 4.75, 2.36, 1.18, 600μm, 300μm, 150μm)",
+      "Flakiness index: thickness gauge method",
+      "Elongation index: length gauge method",
+      "Combined flakiness + elongation index: maximum 35% (IS 383)"
+    ],
+    "applicable_products": [
+      "Quality control testing of aggregates",
+      "Aggregate acceptance at batching plants",
+      "Quarry product evaluation"
+    ],
+    "year": 1963,
+    "keywords": ["sieve analysis", "particle size distribution", "flakiness index", "elongation index", "aggregate grading", "aggregate shape testing"],
+    "text": "IS 2386 Part 1 Aggregate Test Particle Size Shape sieve analysis flakiness index elongation index grading concrete aggregates specification"
+  },
+  {
+    "id": "BIS_AGG_003",
+    "standard_number": "IS 2386 (Part 3):1963",
+    "title": "Methods of Test for Aggregates for Concrete: Part 3 Specific Gravity, Density, Voids, Absorption and Bulking",
+    "category": "Aggregates",
+    "description": "Specifies methods for determining specific gravity, bulk density, percentage voids, water absorption, and bulking of aggregates. These properties are essential for concrete mix design calculations and quality control.",
+    "scope": "Applicable to determination of volumetric and absorption properties of aggregates for use in concrete mix design and quality control.",
+    "key_requirements": [
+      "Specific gravity of aggregate: typically 2.5 to 2.9",
+      "Aggregate water absorption: maximum 2% (IS 383)",
+      "Bulk density (loose and compacted) determination",
+      "Surface moisture determination",
+      "Bulking factor for sand volume correction"
+    ],
+    "applicable_products": [
+      "Concrete mix design calculations",
+      "Aggregate quality control at batching plants",
+      "Stockpile management for moisture correction"
+    ],
+    "year": 1963,
+    "keywords": ["specific gravity aggregate", "water absorption aggregate", "bulk density", "void ratio", "aggregate moisture", "bulking of sand"],
+    "text": "IS 2386 Part 3 Specific Gravity Density Voids Absorption Bulking aggregate concrete mix design quality control specification"
+  },
+  {
+    "id": "BIS_AGG_004",
+    "standard_number": "IS 2386 (Part 4):1963",
+    "title": "Methods of Test for Aggregates for Concrete: Part 4 Mechanical Properties",
+    "category": "Aggregates",
+    "description": "Specifies methods for determining the mechanical strength properties of aggregates including aggregate crushing value (ACV), aggregate impact value (AIV), aggregate abrasion value, and ten percent fines value (TFV). These tests assess resistance of aggregate to crushing, impact, and abrasion.",
+    "scope": "Applicable to testing mechanical strength and durability of coarse aggregates for concrete, road construction, and wearing courses.",
+    "key_requirements": [
+      "Aggregate Crushing Value (ACV): maximum 45% for concrete, 30% for wearing surfaces",
+      "Aggregate Impact Value (AIV): maximum 45% for concrete, 30% for wearing surfaces",
+      "Los Angeles Abrasion Value: maximum 50% for concrete",
+      "Ten Percent Fines Value: minimum 50 kN"
+    ],
+    "applicable_products": [
+      "Structural concrete aggregates",
+      "Road aggregate",
+      "Wearing course aggregate",
+      "Railway ballast aggregate"
+    ],
+    "year": 1963,
+    "keywords": ["aggregate crushing value", "aggregate impact value", "Los Angeles abrasion", "aggregate mechanical test", "ACV", "AIV", "aggregate strength"],
+    "text": "IS 2386 Part 4 Mechanical Properties Aggregate Crushing Value ACV Impact Value AIV abrasion ten percent fines strength test specification"
+  },
+  {
+    "id": "BIS_AGG_005",
+    "standard_number": "IS 515:1959",
+    "title": "Natural and Manufactured Aggregates for Use in Mass Concrete — Specification",
+    "category": "Aggregates",
+    "description": "Specifies requirements for large-size aggregates (up to 150 mm) used in mass concrete construction such as dams, gravity walls, and large foundations where reduction of cement content and heat of hydration is achieved by using larger aggregate sizes.",
+    "scope": "Applicable to mass concrete construction such as dams, barrages, large gravity retaining walls, and thick raft foundations.",
+    "key_requirements": [
+      "Maximum aggregate size up to 150 mm for mass concrete",
+      "Grading requirements for large-size aggregate",
+      "Cleanliness requirements (silt, clay content)",
+      "Soundness requirements (sodium sulphate test)"
+    ],
+    "applicable_products": [
+      "Concrete dams and barrages",
+      "Large gravity retaining walls",
+      "Thick raft foundations for heavy structures",
+      "Weirs and other hydraulic structures"
+    ],
+    "year": 1959,
+    "keywords": ["mass concrete aggregate", "large size aggregate", "dam aggregate", "150mm aggregate", "gravity wall concrete"],
+    "text": "IS 515:1959 Natural Manufactured Aggregates Mass Concrete dam barrage large size gravity wall thick foundation specification"
+  },
+  {
+    "id": "BIS_MAS_001",
+    "standard_number": "IS 1077:1992",
+    "title": "Common Burnt Clay Building Bricks — Specification",
+    "category": "Masonry",
+    "description": "Specifies requirements for common burnt clay building bricks including dimensions, tolerances, classification by strength, water absorption, efflorescence, and other quality parameters. This is the standard for traditional clay bricks used in wall construction.",
+    "scope": "Applicable to common burnt clay bricks used in load-bearing and non-load-bearing brick masonry wall construction.",
+    "key_requirements": [
+      "Standard size: 190 × 90 × 90 mm (modular) or 230 × 110 × 75 mm (conventional)",
+      "Class designation: 3.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 25, 30, 35 (compressive strength in N/mm²)",
+      "Water absorption: maximum 20% for Classes up to 12.5; 15% for higher classes",
+      "Efflorescence: slight to nil for good quality bricks",
+      "Warpage tolerance: maximum 3%"
+    ],
+    "applicable_products": [
+      "Load-bearing brick masonry walls",
+      "Non-load-bearing partition walls",
+      "Foundation brickwork",
+      "Boundary walls",
+      "Brick paving"
+    ],
+    "year": 1992,
+    "keywords": ["clay bricks", "burnt clay bricks", "building bricks", "brick masonry", "load bearing wall", "brick strength", "water absorption brick"],
+    "text": "IS 1077:1992 Common Burnt Clay Building Bricks masonry load bearing partition wall dimensions strength water absorption efflorescence specification"
+  },
+  {
+    "id": "BIS_MAS_002",
+    "standard_number": "IS 3952:1988",
+    "title": "Burnt Clay Hollow Blocks for Walls and Partitions — Specification",
+    "category": "Masonry",
+    "description": "Specifies requirements for burnt clay hollow blocks used as a lightweight alternative to solid bricks. Hollow blocks offer better thermal insulation, acoustic properties, and reduced dead load compared to solid brick masonry.",
+    "scope": "Applicable to burnt clay hollow blocks for use in walls and partitions in buildings where lightweight construction and thermal insulation are desired.",
+    "key_requirements": [
+      "Hollow volume: minimum 25% and maximum 60% of gross volume",
+      "Compressive strength: minimum 3.5 N/mm²",
+      "Water absorption: maximum 25%",
+      "Module sizes available",
+      "Shell and web thickness requirements"
+    ],
+    "applicable_products": [
+      "Partition walls in buildings",
+      "Non-load-bearing infill walls",
+      "Thermal insulating walls",
+      "Lightweight masonry construction"
+    ],
+    "year": 1988,
+    "keywords": ["hollow blocks", "clay hollow blocks", "partition wall", "lightweight masonry", "thermal insulation blocks", "non-load bearing wall"],
+    "text": "IS 3952:1988 Burnt Clay Hollow Blocks partition walls lightweight thermal insulation non-load bearing masonry specification"
+  },
+  {
+    "id": "BIS_MAS_003",
+    "standard_number": "IS 2185 (Part 1):2005",
+    "title": "Concrete Masonry Units — Specification: Part 1 Hollow and Solid Concrete Blocks",
+    "category": "Masonry",
+    "description": "Specifies requirements for hollow and solid concrete blocks (CMU) made from Portland cement, aggregates, and water, used for masonry construction. Concrete blocks offer high strength, durability, and dimensional accuracy, suitable for structural and non-structural walls.",
+    "scope": "Applicable to concrete masonry units (hollow and solid blocks) for load-bearing and non-load-bearing walls, foundations, and pavements.",
+    "key_requirements": [
+      "Grades: A (Dense aggregate), B (Lightweight aggregate)",
+      "Hollow blocks: Type I (hollow ≥ 25%), Type II (hollow ≥ 25% with partitions)",
+      "Compressive strength: Grade A 4.0 N/mm² min, Grade B 3.5 N/mm² min (hollow)",
+      "Water absorption: maximum 10% (Grade A), 15% (Grade B)",
+      "Dimensions: 400 × 200 × 200 mm standard",
+      "Drying shrinkage: maximum 0.06%"
+    ],
+    "applicable_products": [
+      "Load-bearing walls",
+      "Non-load-bearing partition walls",
+      "Basement walls",
+      "Retaining walls",
+      "Industrial building walls"
+    ],
+    "year": 2005,
+    "keywords": ["concrete blocks", "CMU", "hollow concrete blocks", "solid concrete blocks", "AAC block alternative", "masonry units", "concrete masonry"],
+    "text": "IS 2185 Part 1 Concrete Masonry Units hollow solid blocks load bearing partition basement walls compressive strength water absorption specification"
+  },
+  {
+    "id": "BIS_MAS_004",
+    "standard_number": "IS 4139:1989",
+    "title": "Calcium Silicate Bricks — Specification",
+    "category": "Masonry",
+    "description": "Specifies requirements for calcium silicate (sand-lime and flint-lime) bricks made from sand/silica and lime by autoclave curing. These bricks offer uniform dimensions, light colour, good sound absorption, and are suitable for external and internal masonry.",
+    "scope": "Applicable to calcium silicate bricks for masonry construction in external walls, internal walls, and other applications requiring dimensional accuracy and fire resistance.",
+    "key_requirements": [
+      "Compressive strength classes: 20, 25, 35, 50 (in N/mm²)",
+      "Water absorption: 7% to 18% depending on class",
+      "Efflorescence: nil or negligible",
+      "Dimensional tolerances: ±3 mm length and width",
+      "Durability in wet/dry cycles"
+    ],
+    "applicable_products": [
+      "External facing masonry",
+      "Internal walls",
+      "Fire-rated wall construction",
+      "Acoustic walls"
+    ],
+    "year": 1989,
+    "keywords": ["calcium silicate bricks", "sand lime bricks", "autoclaved bricks", "facing bricks", "fire resistant bricks"],
+    "text": "IS 4139:1989 Calcium Silicate Bricks sand lime autoclaved masonry external facing fire resistant acoustic uniform specification"
+  },
+  {
+    "id": "BIS_MAS_005",
+    "standard_number": "IS 2212:1991",
+    "title": "Code of Practice for Brickwork",
+    "category": "Masonry",
+    "description": "A code of practice governing the construction of brickwork including specification for mortar, laying techniques, bonding patterns, joints, and quality of brickwork. Covers both load-bearing and non-load-bearing masonry construction.",
+    "scope": "Applicable to all brickwork construction using clay bricks, concrete blocks, and calcium silicate bricks in buildings.",
+    "key_requirements": [
+      "Mortar grade M1 to M5 as per structural requirements",
+      "Minimum mortar joint thickness: 6 mm, maximum: 12 mm",
+      "English bond for load-bearing walls",
+      "Jointing and pointing specifications",
+      "Laying of bricks — frogs up, fully bedded",
+      "Provision for movement joints at 6-8 m centres",
+      "Inspection and quality control requirements"
+    ],
+    "applicable_products": [
+      "Load-bearing masonry buildings",
+      "Non-load-bearing partition walls",
+      "Compound walls",
+      "Basements and foundation brickwork"
+    ],
+    "year": 1991,
+    "keywords": ["brickwork code", "masonry construction", "mortar grade", "bonding pattern", "jointing", "load bearing masonry", "quality brick construction"],
+    "text": "IS 2212:1991 Code Practice Brickwork mortar bond joints load bearing partition masonry construction quality specification"
+  },
+  {
+    "id": "BIS_MAS_006",
+    "standard_number": "IS 12894:2002",
+    "title": "Pulverised Fuel Ash — Lime Bricks — Specification",
+    "category": "Masonry",
+    "description": "Specifies requirements for eco-friendly bricks made from pulverized fuel ash (fly ash) and lime, manufactured using autoclaving. Fly ash-lime bricks are a sustainable alternative to clay bricks, utilizing industrial waste and offering comparable strength.",
+    "scope": "Applicable to fly ash-lime bricks for use in non-load-bearing and low-load-bearing masonry construction as a sustainable alternative to clay bricks.",
+    "key_requirements": [
+      "Compressive strength: minimum 7.5 N/mm² at 28 days",
+      "Water absorption: maximum 20%",
+      "Fly ash content: minimum 50% by mass",
+      "Soundness test requirement"
+    ],
+    "applicable_products": [
+      "Non-load-bearing partition walls",
+      "Green building construction",
+      "Thermal insulating walls",
+      "Low-cost housing construction"
+    ],
+    "year": 2002,
+    "keywords": ["fly ash bricks", "fly ash lime bricks", "eco bricks", "sustainable bricks", "green construction bricks", "aerocon alternative"],
+    "text": "IS 12894:2002 Fly Ash Lime Bricks pulverized fuel ash sustainable eco-friendly masonry green building low cost housing specification"
+  },
+  {
+    "id": "BIS_STR_001",
+    "standard_number": "IS 875 (Part 1):1987",
+    "title": "Code of Practice for Design Loads for Buildings and Structures: Part 1 Dead Loads",
+    "category": "Structural/General",
+    "description": "Specifies unit weights of building materials and components for calculating dead loads in structural design. Provides comprehensive unit weights for all commonly used building materials including concrete, masonry, wood, metals, and roofing materials.",
+    "scope": "Applicable to structural design of all buildings and structures for calculating self-weight (dead load) of structural and non-structural components.",
+    "key_requirements": [
+      "Unit weight of plain concrete: 24 kN/m³",
+      "Unit weight of reinforced concrete: 25 kN/m³",
+      "Unit weight of brick masonry: 19-20 kN/m³",
+      "Unit weight of structural steel: 78.5 kN/m³",
+      "Unit weight of water: 10 kN/m³",
+      "Floor finishes, partition loads as superimposed dead load"
+    ],
+    "applicable_products": [
+      "Structural design of buildings",
+      "Bridges and flyover design",
+      "Industrial structures",
+      "Foundation design"
+    ],
+    "year": 1987,
+    "keywords": ["dead loads", "unit weight", "self weight", "structural design loads", "building loads", "RCC weight", "masonry weight"],
+    "text": "IS 875 Part 1 Dead Loads unit weight building materials concrete masonry steel structural design buildings bridges specification"
+  },
+  {
+    "id": "BIS_STR_002",
+    "standard_number": "IS 875 (Part 2):1987",
+    "title": "Code of Practice for Design Loads for Buildings and Structures: Part 2 Imposed Loads",
+    "category": "Structural/General",
+    "description": "Specifies imposed (live) loads for floors, roofs, and other structural elements based on occupancy type. Defines minimum floor loads for residential, office, industrial, storage, and other building types used in structural design.",
+    "scope": "Applicable to structural design of all buildings for determining imposed floor loads based on intended use and occupancy.",
+    "key_requirements": [
+      "Residential buildings (bedrooms): 2.0 kN/m²",
+      "Office areas: 2.5-4.0 kN/m²",
+      "Assembly areas: 4.0-5.0 kN/m²",
+      "Industrial floors: 5.0-10.0 kN/m²",
+      "Storage areas: as per material density",
+      "Roof loads: 1.5 kN/m² (accessible), 0.75 kN/m² (inaccessible)"
+    ],
+    "applicable_products": [
+      "Residential building structural design",
+      "Commercial building floors",
+      "Industrial building floors",
+      "Roof slab design"
+    ],
+    "year": 1987,
+    "keywords": ["imposed loads", "live loads", "floor loads", "structural design", "occupancy loads", "residential loads", "industrial floor loads"],
+    "text": "IS 875 Part 2 Imposed Live Loads floor slab structural design residential office industrial building occupancy specification"
+  },
+  {
+    "id": "BIS_STR_003",
+    "standard_number": "IS 875 (Part 3):2015",
+    "title": "Design Loads for Buildings and Structures: Part 3 Wind Loads",
+    "category": "Structural/General",
+    "description": "Specifies methods for calculating wind loads on buildings and structures. Provides basic wind speed zones, terrain categories, topography factors, and pressure coefficients for structural design. Mandatory for designing structures in cyclone-prone coastal zones.",
+    "scope": "Applicable to structural design of all buildings and structures for wind load calculation, including low-rise buildings, tall buildings, towers, and special structures.",
+    "key_requirements": [
+      "Basic wind speed zones (6 zones): 33, 39, 44, 47, 50, 55 m/s",
+      "Design wind speed Vz = Vb × k1 × k2 × k3",
+      "k1: Risk coefficient, k2: Terrain factor, k3: Topography factor",
+      "Design wind pressure: pz = 0.6 × Vz²",
+      "Internal and external pressure coefficients",
+      "Provisions for cyclone-prone regions"
+    ],
+    "applicable_products": [
+      "High-rise buildings and towers",
+      "Industrial sheds with large roof spans",
+      "Chimneys and communication towers",
+      "Bridges and overhead structures",
+      "Coastal and cyclone zone structures"
+    ],
+    "year": 2015,
+    "keywords": ["wind loads", "wind design", "cyclone", "basic wind speed", "wind pressure", "tall buildings", "wind zone India"],
+    "text": "IS 875 Part 3 Wind Loads design wind speed zones cyclone pressure coefficients tall buildings towers roofs structural specification"
+  },
+  {
+    "id": "BIS_STR_004",
+    "standard_number": "IS 1893 (Part 1):2016",
+    "title": "Criteria for Earthquake Resistant Design of Structures: Part 1 General Provisions and Buildings",
+    "category": "Structural/General",
+    "description": "The primary earthquake engineering standard for India, specifying seismic design criteria for buildings and structures. Defines seismic zones (II to V), site classification, design spectrum, response reduction factors, and base shear calculation methods. Essential for all structures in seismic zones.",
+    "scope": "Applicable to seismic design of all buildings and structures in India, with Zone V (highest) covering Himalayan belt and north-eastern India.",
+    "key_requirements": [
+      "Seismic Zones II to V (Zone V: highest hazard)",
+      "Zone factors Z: 0.10 (II), 0.16 (III), 0.24 (IV), 0.36 (V)",
+      "Design Basis Earthquake (DBE): 50% of MCE",
+      "Response reduction factor R: depends on structural system",
+      "Importance factor I: 1.0 to 1.5",
+      "Minimum eccentricity requirement",
+      "Storey drift limitation: 0.004H",
+      "Soft/weak storey provisions"
+    ],
+    "applicable_products": [
+      "All buildings in seismic zones III, IV, V",
+      "Critical facilities in Zone II",
+      "Bridges in seismic zones",
+      "Industrial structures in seismic zones"
+    ],
+    "year": 2016,
+    "keywords": ["earthquake design", "seismic design", "IS 1893", "seismic zone", "Zone IV Zone V", "earthquake resistant", "base shear", "seismic India"],
+    "text": "IS 1893 Part 1 Earthquake Resistant Design seismic zone Zone V IV III base shear response spectrum buildings bridges critical structures specification"
+  },
+  {
+    "id": "BIS_STR_005",
+    "standard_number": "IS 13920:2016",
+    "title": "Ductile Design and Detailing of Reinforced Concrete Structures Subjected to Seismic Forces — Code of Practice",
+    "category": "Structural/General",
+    "description": "Specifies ductile detailing requirements for reinforced concrete buildings in seismic zones III, IV, and V. Mandatory alongside IS 1893 for all RC buildings in moderate to high seismic zones, prescribing special reinforcement configurations to ensure ductile failure mode.",
+    "scope": "Mandatory for all RC buildings in seismic zones III, IV, and V as per IS 1893, specifying detailing requirements for beams, columns, joints, and shear walls.",
+    "key_requirements": [
+      "Beam reinforcement: minimum 2 bars at top and bottom",
+      "Column: minimum 4 bars, special confining reinforcement",
+      "Confinement: closely spaced hoops at beam-column joints",
+      "Shear wall boundary elements requirements",
+      "Lap splice restrictions in potential plastic hinge zones",
+      "Maximum bar diameter limitations",
+      "Stirrup spacing requirements in critical zones"
+    ],
+    "applicable_products": [
+      "RC buildings in seismic zones III, IV, V",
+      "RC frames for multi-storey buildings",
+      "Shear walls",
+      "Coupling beams"
+    ],
+    "year": 2016,
+    "keywords": ["ductile detailing", "seismic detailing RCC", "confinement reinforcement", "beam column joint", "shear wall detailing", "IS 13920", "seismic zone III IV V"],
+    "text": "IS 13920:2016 Ductile Design Detailing Reinforced Concrete seismic forces confining reinforcement columns beams shear walls earthquake resistant specification"
+  },
+  {
+    "id": "BIS_STR_006",
+    "standard_number": "IS 4082:1996",
+    "title": "Recommendations on Stacking and Storage of Construction Materials and Components at Site",
+    "category": "Structural/General",
+    "description": "Provides recommendations for proper stacking, storing, and handling of construction materials at construction sites to prevent damage, contamination, and deterioration. Covers cement, steel, aggregates, bricks, and pre-fabricated components.",
+    "scope": "Applicable to storage and stacking of all construction materials at project sites to maintain quality and prevent losses.",
+    "key_requirements": [
+      "Cement: stored in dry, ventilated godown, bags not exceeding 10 bags high, FIFO",
+      "Steel: stored off ground on supports, protected from corrosion and mechanical damage",
+      "Aggregates: stored in separate bins, protected from contamination",
+      "Bricks: stacked not more than 1.8 m high in an inclined manner",
+      "Pre-cast elements: proper support and dunnage requirements"
+    ],
+    "applicable_products": [
+      "Cement storage on site",
+      "Steel storage at site",
+      "Aggregate storage",
+      "Brick stacking",
+      "Construction material handling"
+    ],
+    "year": 1996,
+    "keywords": ["material storage", "stacking construction materials", "cement storage", "steel storage site", "aggregate storage", "site management"],
+    "text": "IS 4082:1996 Stacking Storage Construction Materials Site cement steel aggregate bricks pre-cast components site management quality specification"
+  },
+  {
+    "id": "BIS_STR_007",
+    "standard_number": "IS 456:2000 (with Amendment 3:2020)",
+    "standard_number": "IS 2950 (Part 1):1981",
+    "title": "Code of Practice for Design and Construction of Raft Foundations",
+    "category": "Structural/General",
+    "description": "Specifies design and construction requirements for raft (mat) foundations used when soil bearing capacity is low or when combined footings are needed to cover a large area. Covers flat slab type, beam and slab type, and cellular raft foundations.",
+    "scope": "Applicable to raft foundation design and construction for buildings on soft soils, waterlogged areas, and where differential settlement is a concern.",
+    "key_requirements": [
+      "Minimum concrete grade M20 for raft",
+      "Net safe bearing capacity determination",
+      "Minimum reinforcement 0.12% (temperature and shrinkage)",
+      "Beam and slab raft: depth not less than 750 mm",
+      "Waterproofing requirements for below-ground rafts",
+      "Settlement analysis requirements"
+    ],
+    "applicable_products": [
+      "Foundations on weak soils",
+      "Basement raft slabs",
+      "Industrial foundations for heavy loads",
+      "High-rise building foundations"
+    ],
+    "year": 1981,
+    "keywords": ["raft foundation", "mat foundation", "foundation design", "soft soil", "basement slab", "foundation code"],
+    "text": "IS 2950 Part 1 Raft Foundation Design Construction soft soil mat slab basement settlement concrete reinforcement specification"
+  }
+]
