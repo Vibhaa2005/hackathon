@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import base64
+from concurrent.futures import ThreadPoolExecutor
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -170,11 +171,15 @@ if "voice_transcript" not in st.session_state:
     st.session_state.voice_transcript = ""
 
 # ─── Imports (after env setup) ───────────────────────────────────────────────
-from src.rag_pipeline import get_pipeline
+from src.rag_pipeline import get_pipeline as _get_pipeline
 from src.translator import (
     translate_to_english, translate_from_english,
     speech_to_text, text_to_speech, LANGUAGE_CODES,
 )
+
+@st.cache_resource(show_spinner="Loading BIS standards index…")
+def get_pipeline():
+    return _get_pipeline()
 
 LANGUAGES = list(LANGUAGE_CODES.keys())
 
@@ -330,11 +335,17 @@ with tab1:
                 pipeline.top_k = top_k
                 output = pipeline.query(query_en)
 
-            # Pre-translate rationales once so reruns don't re-call Sarvam
-            for r in output["results"]:
-                if lang != "English":
-                    r["rationale_display"] = translate_from_english(r["rationale"], lang)
-                else:
+            # Translate all rationales in parallel to avoid sequential API wait
+            if lang != "English":
+                rationales = [r["rationale"] for r in output["results"]]
+                with ThreadPoolExecutor(max_workers=len(rationales)) as ex:
+                    translated = list(ex.map(
+                        lambda t: translate_from_english(t, lang), rationales
+                    ))
+                for r, t in zip(output["results"], translated):
+                    r["rationale_display"] = t
+            else:
+                for r in output["results"]:
                     r["rationale_display"] = r["rationale"]
 
             st.session_state.search_results = output
