@@ -151,6 +151,12 @@ def _set_env(key: str, st_key: str):
 _set_env("DATABRICKS_TOKEN", "DATABRICKS_TOKEN")
 _set_env("SARVAM_API_KEY", "SARVAM_API_KEY")
 
+# Allow runtime key entry (overrides secrets if provided)
+if "databricks_token" not in st.session_state:
+    st.session_state.databricks_token = os.environ.get("DATABRICKS_TOKEN", "")
+if "sarvam_key" not in st.session_state:
+    st.session_state.sarvam_key = os.environ.get("SARVAM_API_KEY", "")
+
 # ─── Imports (after env setup) ───────────────────────────────────────────────
 from src.rag_pipeline import get_pipeline
 from src.translator import (
@@ -176,9 +182,33 @@ def category_css(cat: str) -> str:
 # ─── Sidebar ─────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown('<div class="sidebar-logo">🏗️ BIS Finder</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sidebar-sub">BIS Standards for Building Materials</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-sub">BIS Standards Discovery — Building Materials</div>', unsafe_allow_html=True)
     st.divider()
 
+    st.markdown("**API Keys**")
+    db_token = st.text_input(
+        "Databricks Token",
+        value=st.session_state.databricks_token,
+        type="password",
+        placeholder="dapi…",
+        help="Required for AI-generated rationale. Get from Databricks workspace.",
+    )
+    if db_token:
+        st.session_state.databricks_token = db_token
+        os.environ["DATABRICKS_TOKEN"] = db_token
+
+    sarvam_key = st.text_input(
+        "Sarvam AI API Key",
+        value=st.session_state.sarvam_key,
+        type="password",
+        placeholder="sk-…",
+        help="Required for translation, voice input, and voice output.",
+    )
+    if sarvam_key:
+        st.session_state.sarvam_key = sarvam_key
+        os.environ["SARVAM_API_KEY"] = sarvam_key
+
+    st.divider()
     lang = st.selectbox("🌐 Language / भाषा", LANGUAGES, index=0)
     top_k = st.slider("Number of Standards", min_value=3, max_value=5, value=3)
 
@@ -187,16 +217,8 @@ with st.sidebar:
     st.caption(
         "AI-powered RAG system that maps product descriptions to "
         "relevant Bureau of Indian Standards (BIS) for building materials. "
-        "Covers Cement, Steel, Concrete, Aggregates, and Masonry."
+        "Covers 25+ categories including Cement, Steel, Plastics, Glass, and more."
     )
-    st.divider()
-    st.caption("Categories covered:")
-    for cat, css in CATEGORY_CSS.items():
-        st.markdown(
-            f'<span class="category-badge {css}">{cat}</span>',
-            unsafe_allow_html=True,
-        )
-    st.markdown('<span class="category-badge cat-general">Structural/General</span>', unsafe_allow_html=True)
 
 
 # ─── Hero ────────────────────────────────────────────────────────────────────
@@ -461,12 +483,12 @@ Product Description
            │
            ▼
   ┌─────────────────────┐
-  │   FAISS Vector DB   │  (Cosine similarity search over 39 BIS standards)
+  │   FAISS Vector DB   │  (Cosine similarity search over 441 BIS standards)
   └────────┬────────────┘
            │
            ▼
   ┌─────────────────────┐
-  │   LLM Rationale     │  (Groq / Llama-3.1-8B-Instant)
+  │   LLM Rationale     │  (Databricks / Llama-3.1-8B-Instruct)
   └────────┬────────────┘
            │
            ▼
@@ -479,10 +501,10 @@ Product Description
 | Frontend | Streamlit |
 | Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
 | Vector Store | FAISS (IndexFlatIP) |
-| LLM | Groq API / Llama-3.1-8B-Instant |
-| Translation | Sarvam AI (mayura:v1) — 10 Indian languages |
-| ASR (Voice) | Sarvam AI (saarika:v1) |
-| TTS (Voice) | Sarvam AI (bulbul:v1) |
+| LLM | Databricks / Llama-3.1-8B-Instruct |
+| Translation | Sarvam AI (mayura:v1) — 11 Indian languages |
+| ASR (Voice) | Sarvam AI (saarika:v2.5) |
+| TTS (Voice) | Sarvam AI (bulbul:v2) |
 
 ### Evaluation Metrics
 - **Hit Rate @3**: Fraction of queries where the correct standard appears in top-3
