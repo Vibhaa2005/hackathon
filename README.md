@@ -9,7 +9,7 @@ An AI-powered RAG (Retrieval-Augmented Generation) system that maps product desc
 
 Demo video and PPT — [View here](https://drive.google.com/drive/folders/11oLCd4YqHXkvmGSgFwzhUwG3VnDWESpZ?usp=drive_link)
 
-Live App — [hackathongit-5sbttvasahsfw3nkthdf2y.streamlit.app](https://hackathongit-5sbttvasahsfw3nkthdf2y.streamlit.app/)
+Live App — [BIS_Finder_by_Binary_Brains](https://hackathongit-5sbttvasahsfw3nkthdf2y.streamlit.app/)
 
 Deploy on [Streamlit Cloud](https://streamlit.io/cloud) (free):
 1. Fork this repo
