@@ -164,6 +164,8 @@ if "search_lang" not in st.session_state:
     st.session_state.search_lang = "English"
 if "tts_audio" not in st.session_state:
     st.session_state.tts_audio = None
+if "tts_error" not in st.session_state:
+    st.session_state.tts_error = ""
 
 # ─── Imports (after env setup) ───────────────────────────────────────────────
 from src.rag_pipeline import get_pipeline
@@ -338,7 +340,8 @@ with tab1:
 
             st.session_state.search_results = output
             st.session_state.search_lang = lang
-            st.session_state.tts_audio = None  # clear stale audio on new search
+            st.session_state.tts_audio = None
+            st.session_state.tts_error = ""
 
         elif search_clicked and not product_description:
             st.warning("Please enter a product description.")
@@ -400,13 +403,18 @@ with tab1:
                     )
                 tts_text = " ".join(tts_parts)
                 with st.spinner("Generating audio…"):
-                    audio = text_to_speech(tts_text, render_lang)
-                st.session_state.tts_audio = audio if audio else b""
+                    audio, err = text_to_speech(tts_text, render_lang)
+                if audio:
+                    st.session_state.tts_audio = audio
+                    st.session_state.tts_error = ""
+                else:
+                    st.session_state.tts_audio = None
+                    st.session_state.tts_error = err
 
             if st.session_state.tts_audio:
                 st.audio(st.session_state.tts_audio, format="audio/wav")
-            elif st.session_state.tts_audio == b"":
-                st.warning("Audio generation failed. Check your Sarvam AI key in the sidebar.")
+            elif st.session_state.get("tts_error"):
+                st.error(f"Audio failed: {st.session_state.tts_error}")
 
             # Download results
             st.divider()

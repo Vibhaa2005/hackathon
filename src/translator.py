@@ -152,15 +152,16 @@ def _concat_wavs(wav_bytes_list: list[bytes]) -> bytes:
     return out.getvalue()
 
 
-def text_to_speech(text: str, language: str) -> Optional[bytes]:
+def text_to_speech(text: str, language: str) -> tuple[Optional[bytes], str]:
+    """Returns (audio_bytes, error_message). audio_bytes is None on failure."""
     api_key = _get_api_key()
     if not api_key:
-        return None
-    lang_code = LANGUAGE_CODES.get(language, "hi-IN")
+        return None, "Sarvam API key not set. Enter it in the sidebar."
 
-    # Split into TTS-safe chunks
+    lang_code = LANGUAGE_CODES.get(language, "hi-IN")
     chunks = [text[i:i + _TTS_CHUNK] for i in range(0, len(text), _TTS_CHUNK)]
     wav_chunks: list[bytes] = []
+    last_error = ""
 
     for chunk in chunks:
         try:
@@ -184,9 +185,13 @@ def text_to_speech(text: str, language: str) -> Optional[bytes]:
                 audio_b64 = resp.json().get("audios", [""])[0]
                 if audio_b64:
                     wav_chunks.append(base64.b64decode(audio_b64))
-        except Exception:
-            pass
+                else:
+                    last_error = "Sarvam returned empty audio."
+            else:
+                last_error = f"Sarvam TTS error {resp.status_code}: {resp.text[:200]}"
+        except Exception as e:
+            last_error = str(e)
 
     if not wav_chunks:
-        return None
-    return _concat_wavs(wav_chunks)
+        return None, last_error or "No audio chunks returned."
+    return _concat_wavs(wav_chunks), ""
