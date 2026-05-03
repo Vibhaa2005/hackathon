@@ -6,3 +6,4 @@ requests>=2.31.0
 numpy>=1.26.0
 audio-recorder-streamlit>=0.0.8
 python-dotenv>=1.0.0
+gTTS>=2.3.2

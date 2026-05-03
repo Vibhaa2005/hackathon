@@ -164,8 +164,8 @@ if "search_lang" not in st.session_state:
     st.session_state.search_lang = "English"
 if "tts_audio" not in st.session_state:
     st.session_state.tts_audio = None
-if "tts_error" not in st.session_state:
-    st.session_state.tts_error = ""
+if "tts_fmt" not in st.session_state:
+    st.session_state.tts_fmt = "audio/wav"
 
 # ─── Imports (after env setup) ───────────────────────────────────────────────
 from src.rag_pipeline import get_pipeline
@@ -341,7 +341,7 @@ with tab1:
             st.session_state.search_results = output
             st.session_state.search_lang = lang
             st.session_state.tts_audio = None
-            st.session_state.tts_error = ""
+            st.session_state.tts_fmt = "audio/wav"
 
         elif search_clicked and not product_description:
             st.warning("Please enter a product description.")
@@ -403,18 +403,12 @@ with tab1:
                     )
                 tts_text = " ".join(tts_parts)
                 with st.spinner("Generating audio…"):
-                    audio, err = text_to_speech(tts_text, render_lang)
-                if audio:
-                    st.session_state.tts_audio = audio
-                    st.session_state.tts_error = ""
-                else:
-                    st.session_state.tts_audio = None
-                    st.session_state.tts_error = err
+                    audio, fmt = text_to_speech(tts_text, render_lang)
+                st.session_state.tts_audio = audio
+                st.session_state.tts_fmt = fmt
 
             if st.session_state.tts_audio:
-                st.audio(st.session_state.tts_audio, format="audio/wav")
-            elif st.session_state.get("tts_error"):
-                st.error(f"Audio failed: {st.session_state.tts_error}")
+                st.audio(st.session_state.tts_audio, format=st.session_state.tts_fmt)
 
             # Download results
             st.divider()

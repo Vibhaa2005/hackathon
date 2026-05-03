@@ -1,7 +1,6 @@
 import base64
 import io
 import os
-import struct
 import wave
 import requests
 from typing import Optional
@@ -20,6 +19,20 @@ LANGUAGE_CODES = {
     "Gujarati":  "gu-IN",
     "Punjabi":   "pa-IN",
     "Odia":      "od-IN",
+}
+
+GTTS_CODES = {
+    "English":   "en",
+    "Hindi":     "hi",
+    "Tamil":     "ta",
+    "Telugu":    "te",
+    "Kannada":   "kn",
+    "Malayalam": "ml",
+    "Bengali":   "bn",
+    "Marathi":   "mr",
+    "Gujarati":  "gu",
+    "Punjabi":   "pa",
+    "Odia":      "or",
 }
 
 _TRANSLATE_CHUNK = 900   # Sarvam translation limit
@@ -152,17 +165,11 @@ def _concat_wavs(wav_bytes_list: list[bytes]) -> bytes:
     return out.getvalue()
 
 
-def text_to_speech(text: str, language: str) -> tuple[Optional[bytes], str]:
-    """Returns (audio_bytes, error_message). audio_bytes is None on failure."""
-    api_key = _get_api_key()
-    if not api_key:
-        return None, "Sarvam API key not set. Enter it in the sidebar."
-
+def _tts_sarvam(text: str, language: str, api_key: str) -> Optional[bytes]:
+    """Try Sarvam bulbul:v2 TTS. Returns WAV bytes or None."""
     lang_code = LANGUAGE_CODES.get(language, "hi-IN")
     chunks = [text[i:i + _TTS_CHUNK] for i in range(0, len(text), _TTS_CHUNK)]
     wav_chunks: list[bytes] = []
-    last_error = ""
-
     for chunk in chunks:
         try:
             resp = requests.post(
@@ -185,13 +192,37 @@ def text_to_speech(text: str, language: str) -> tuple[Optional[bytes], str]:
                 audio_b64 = resp.json().get("audios", [""])[0]
                 if audio_b64:
                     wav_chunks.append(base64.b64decode(audio_b64))
-                else:
-                    last_error = "Sarvam returned empty audio."
-            else:
-                last_error = f"Sarvam TTS error {resp.status_code}: {resp.text[:200]}"
-        except Exception as e:
-            last_error = str(e)
+        except Exception:
+            pass
+    return _concat_wavs(wav_chunks) if wav_chunks else None
 
-    if not wav_chunks:
-        return None, last_error or "No audio chunks returned."
-    return _concat_wavs(wav_chunks), ""
+
+def _tts_gtts(text: str, language: str) -> Optional[bytes]:
+    """Fallback TTS via gTTS (Google). Returns MP3 bytes or None."""
+    try:
+        from gtts import gTTS
+        lang_code = GTTS_CODES.get(language, "en")
+        buf = io.BytesIO()
+        gTTS(text=text, lang=lang_code, slow=False).write_to_fp(buf)
+        buf.seek(0)
+        return buf.read()
+    except Exception:
+        return None
+
+
+def text_to_speech(text: str, language: str) -> tuple[Optional[bytes], str]:
+    """Returns (audio_bytes, fmt). Tries Sarvam first, falls back to gTTS.
+    fmt is 'audio/wav' for Sarvam, 'audio/mp3' for gTTS, '' on failure.
+    """
+    api_key = _get_api_key()
+    if api_key:
+        audio = _tts_sarvam(text, language, api_key)
+        if audio:
+            return audio, "audio/wav"
+
+    # Fallback: gTTS (no API key required)
+    audio = _tts_gtts(text, language)
+    if audio:
+        return audio, "audio/mp3"
+
+    return None, ""
