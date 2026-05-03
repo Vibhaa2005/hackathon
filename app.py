@@ -157,6 +157,14 @@ if "databricks_token" not in st.session_state:
 if "sarvam_key" not in st.session_state:
     st.session_state.sarvam_key = os.environ.get("SARVAM_API_KEY", "")
 
+# Persist search results and TTS audio across reruns
+if "search_results" not in st.session_state:
+    st.session_state.search_results = None
+if "search_lang" not in st.session_state:
+    st.session_state.search_lang = "English"
+if "tts_audio" not in st.session_state:
+    st.session_state.tts_audio = None
+
 # ─── Imports (after env setup) ───────────────────────────────────────────────
 from src.rag_pipeline import get_pipeline
 from src.translator import (
@@ -321,19 +329,33 @@ with tab1:
                 pipeline.top_k = top_k
                 output = pipeline.query(query_en)
 
+            # Pre-translate rationales once so reruns don't re-call Sarvam
+            for r in output["results"]:
+                if lang != "English":
+                    r["rationale_display"] = translate_from_english(r["rationale"], lang)
+                else:
+                    r["rationale_display"] = r["rationale"]
+
+            st.session_state.search_results = output
+            st.session_state.search_lang = lang
+            st.session_state.tts_audio = None  # clear stale audio on new search
+
+        elif search_clicked and not product_description:
+            st.warning("Please enter a product description.")
+
+        # ── Render from session state (survives TTS button reruns) ──────────
+        output = st.session_state.search_results
+        render_lang = st.session_state.search_lang
+
+        if output:
             results = output["results"]
             latency = output["latency_seconds"]
-
             st.caption(f"⚡ {latency}s · Found {len(results)} standards")
 
             for r in results:
                 cat_css = category_css(r["category"])
-                rationale = r["rationale"]
+                rationale = r.get("rationale_display", r["rationale"])
                 key_req = r["key_requirement"]
-
-                if lang != "English":
-                    with st.spinner(f"Translating result {r['rank']}…"):
-                        rationale = translate_from_english(rationale, lang)
 
                 with st.container():
                     st.markdown(f"""
@@ -367,20 +389,24 @@ with tab1:
                         if r.get("year"):
                             st.caption(f"Year: {r['year']}")
 
-            # TTS
-            if lang != "English" and results:
-                st.divider()
-                if st.button("🔊 Listen to top result", use_container_width=True):
-                    top = results[0]
-                    tts_text = f"{top['standard_number']}. {top['title']}. {top['rationale']}"
-                    if lang != "English":
-                        tts_text = translate_from_english(tts_text, lang)
-                    with st.spinner("Generating audio…"):
-                        audio = text_to_speech(tts_text, lang)
-                    if audio:
-                        st.audio(audio, format="audio/wav")
-                    else:
-                        st.warning("TTS requires Sarvam AI key.")
+            # ── Voice output — all results, any language ─────────────────
+            st.divider()
+            if st.button("🔊 Listen to All Results", use_container_width=True):
+                tts_parts = []
+                for r in results:
+                    tts_parts.append(
+                        f"Standard {r['rank']}. {r['standard_number']}. "
+                        f"{r['title']}. {r.get('rationale_display', r['rationale'])}."
+                    )
+                tts_text = " ".join(tts_parts)
+                with st.spinner("Generating audio…"):
+                    audio = text_to_speech(tts_text, render_lang)
+                st.session_state.tts_audio = audio if audio else b""
+
+            if st.session_state.tts_audio:
+                st.audio(st.session_state.tts_audio, format="audio/wav")
+            elif st.session_state.tts_audio == b"":
+                st.warning("Audio generation failed. Check your Sarvam AI key in the sidebar.")
 
             # Download results
             st.divider()
@@ -393,8 +419,6 @@ with tab1:
                 use_container_width=True,
             )
 
-        elif search_clicked and not product_description:
-            st.warning("Please enter a product description.")
         else:
             st.markdown("""
 <div style="text-align:center; color:#484f58; padding: 3rem 0;">
