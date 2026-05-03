@@ -239,11 +239,11 @@ python eval_script.py --results team_results.json
 
 ### Results on Public Test Set (10 queries)
 
-| Metric | Score | Threshold | Status |
-|--------|-------|-----------|--------|
-| Hit Rate @3 | 100% | >80% | Exceeds by 20pp |
-| MRR @5 | 1.000 | >0.7 | Exceeds by 0.300 |
-| Avg Latency | 1.42s (warm: 0.011s) | <5s | Exceeds |
+| Metric | Score | Threshold |
+|--------|-------|-----------|
+| Hit Rate @3 | 100% | >80% |
+| MRR @5 | 1.000 | >0.7 |
+| Avg Latency | 1.42s (warm: 0.011s) | <5s |
 
 ---
 
