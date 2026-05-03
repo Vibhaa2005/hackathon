@@ -2,13 +2,14 @@
 Entry-point script for judges.
 
 Usage:
-    python inference.py --input hidden_private_dataset.json --output team_results.json
+    python inference.py --input public_test_set.json --output team_results.json
 
 Input JSON format:
-    [{"id": "q1", "query": "OPC 43 cement for RCC columns"}, ...]
+    [{"id": "PUB-01", "query": "...", "expected_standards": ["IS 269:1989"]}, ...]
 
 Output JSON format:
-    [{"id": "q1", "retrieved_standards": ["IS 8112:2013", ...], "latency_seconds": 0.123}, ...]
+    [{"id": "PUB-01", "query": "...", "expected_standards": [...],
+      "retrieved_standards": ["IS 269:2015", ...], "latency_seconds": 1.23}, ...]
 """
 
 import argparse
@@ -32,7 +33,7 @@ def run_inference(input_path: str, output_path: str, top_k: int = 5) -> None:
     results = []
     for item in items:
         item_id = item.get("id", str(len(results)))
-        query = item.get("query", "")
+        query   = item.get("query", "")
 
         t0 = time.time()
         output = pipeline.query(query)
@@ -40,14 +41,19 @@ def run_inference(input_path: str, output_path: str, top_k: int = 5) -> None:
 
         retrieved_standards = [r["standard_number"] for r in output["results"]]
 
-        results.append({
-            "id": item_id,
+        entry = {
+            "id":                  item_id,
+            "query":               query,
+            "expected_standards":  item.get("expected_standards", []),
             "retrieved_standards": retrieved_standards,
-            "latency_seconds": latency,
-        })
-        print(f"[{item_id}] {len(retrieved_standards)} standards in {latency:.3f}s")
+            "latency_seconds":     latency,
+        }
+        results.append(entry)
+        print(f"[{item_id}] retrieved {len(retrieved_standards)} standards in {latency:.3f}s")
 
-    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True) if os.path.dirname(output_path) else None
+    out_dir = os.path.dirname(os.path.abspath(output_path))
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
@@ -56,9 +62,9 @@ def run_inference(input_path: str, output_path: str, top_k: int = 5) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="BIS Standards RAG — inference script")
-    parser.add_argument("--input", required=True, help="Path to input JSON file")
+    parser.add_argument("--input",  required=True, help="Path to input JSON file")
     parser.add_argument("--output", required=True, help="Path to output JSON file")
-    parser.add_argument("--top_k", type=int, default=5, help="Number of standards to retrieve")
+    parser.add_argument("--top_k",  type=int, default=5, help="Number of standards to retrieve")
     args = parser.parse_args()
 
     run_inference(args.input, args.output, args.top_k)

@@ -148,7 +148,7 @@ def _set_env(key: str, st_key: str):
     if val:
         os.environ[key] = val
 
-_set_env("GROQ_API_KEY", "GROQ_API_KEY")
+_set_env("DATABRICKS_TOKEN", "DATABRICKS_TOKEN")
 _set_env("SARVAM_API_KEY", "SARVAM_API_KEY")
 
 # ─── Imports (after env setup) ───────────────────────────────────────────────

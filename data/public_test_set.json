@@ -1,0 +1,52 @@
+[
+  {
+    "id": "PUB-01",
+    "query": "We are a small enterprise manufacturing 33 Grade Ordinary Portland Cement used in general construction and masonry work. Which BIS standards must we comply with?",
+    "expected_standards": ["IS 269:2015"]
+  },
+  {
+    "id": "PUB-02",
+    "query": "We produce TMT steel bars Fe500D grade for earthquake resistant RCC structures in seismic zone V buildings.",
+    "expected_standards": ["IS 1786:2008"]
+  },
+  {
+    "id": "PUB-03",
+    "query": "Our company supplies 20mm coarse aggregate crushed stone for M30 grade concrete mix design.",
+    "expected_standards": ["IS 383:2016"]
+  },
+  {
+    "id": "PUB-04",
+    "query": "We manufacture first class burnt clay bricks for load bearing wall construction in residential buildings.",
+    "expected_standards": ["IS 1077:1992"]
+  },
+  {
+    "id": "PUB-05",
+    "query": "We produce Portland Pozzolana Cement fly ash based for use in marine structures and underground foundations.",
+    "expected_standards": ["IS 1489 (Part 1):2015"]
+  },
+  {
+    "id": "PUB-06",
+    "query": "Our unit manufactures 43 grade OPC cement for reinforced concrete construction of multi-storey buildings.",
+    "expected_standards": ["IS 8112:2013"]
+  },
+  {
+    "id": "PUB-07",
+    "query": "We supply structural steel plates and sections IS 2062 grade for industrial warehouse roof trusses.",
+    "expected_standards": ["IS 2062:2011"]
+  },
+  {
+    "id": "PUB-08",
+    "query": "We manufacture hollow concrete blocks for non-load bearing partition walls in apartment complexes.",
+    "expected_standards": ["IS 2185 (Part 1):2005"]
+  },
+  {
+    "id": "PUB-09",
+    "query": "We need to test compressive strength of concrete cubes from an RCC bridge construction site.",
+    "expected_standards": ["IS 516:2018"]
+  },
+  {
+    "id": "PUB-10",
+    "query": "We produce 53 grade OPC high strength cement for prestressed concrete and high rise structures.",
+    "expected_standards": ["IS 12269:2013"]
+  }
+]
