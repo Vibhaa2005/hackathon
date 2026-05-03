@@ -57,7 +57,7 @@ def run_inference(input_path: str, output_path: str, top_k: int = 5) -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
-    print(f"\nDone. {len(results)} queries processed → {output_path}")
+    print(f"\nDone. {len(results)} queries processed -> {output_path}")
 
 
 if __name__ == "__main__":
