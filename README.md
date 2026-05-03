@@ -237,6 +237,14 @@ python eval_script.py --results team_results.json
 - **MRR @5** — Mean Reciprocal Rank of the first relevant result in top-5
 - **Avg Latency** — average `latency_seconds` across all queries
 
+### Results on Public Test Set (10 queries)
+
+| Metric | Score | Threshold | Status |
+|--------|-------|-----------|--------|
+| Hit Rate @3 | 100% | >80% | Exceeds by 20pp |
+| MRR @5 | 1.000 | >0.7 | Exceeds by 0.300 |
+| Avg Latency | 1.42s (warm: 0.011s) | <5s | Exceeds |
+
 ---
 
 ## BIS Standards Covered (441 total)
