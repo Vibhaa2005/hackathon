@@ -1,7 +1,7 @@
 # BIS Standards Recommendation Engine
 ### Accelerating MSE Compliance — Automating BIS Standard Discovery for Building Materials
 
-An AI-powered RAG (Retrieval-Augmented Generation) system that maps product descriptions to the most applicable Bureau of Indian Standards (BIS) for building materials — in seconds, across 10 Indian languages.
+An AI-powered RAG (Retrieval-Augmented Generation) system that maps product descriptions to the most applicable Bureau of Indian Standards (BIS) for building materials — in seconds, across 11 Indian languages with full voice support.
 
 ---
 
@@ -10,7 +10,7 @@ An AI-powered RAG (Retrieval-Augmented Generation) system that maps product desc
 Deploy on [Streamlit Cloud](https://streamlit.io/cloud) (free):
 1. Fork this repo
 2. Go to share.streamlit.io → New app → point to `app.py`
-3. Add secrets: `GROQ_API_KEY` and `SARVAM_API_KEY`
+3. Add secrets: `DATABRICKS_TOKEN` and `SARVAM_API_KEY`
 
 ---
 
@@ -18,13 +18,110 @@ Deploy on [Streamlit Cloud](https://streamlit.io/cloud) (free):
 
 | Feature | Description |
 |---------|-------------|
-| RAG Pipeline | FAISS vector search + Llama-3.1-8B rationale generation |
-| 39 BIS Standards | Cement, Steel, Concrete, Aggregates, Masonry, Structural |
-| Multilingual | 10 Indian languages via Sarvam AI (Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Gujarati, Punjabi, Odia) |
-| Voice Input | Speech-to-text via Sarvam AI Saarika ASR |
-| Voice Output | Text-to-speech via Sarvam AI Bulbul TTS |
-| Top 3–5 Standards | With rationale and key compliance requirements |
+| RAG Pipeline | FAISS vector search + Llama-3.1-8B-Instruct rationale generation |
+| 441 BIS Standards | 25+ categories from the full BIS building materials dataset |
+| Multilingual | 11 Indian languages via Sarvam AI — Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Gujarati, Punjabi, Odia, English |
+| Voice Input | Speech-to-text via Sarvam AI Saarika ASR (saarika:v2.5) |
+| Voice Output | Text-to-speech via Sarvam AI Bulbul TTS (bulbul:v2) with WAV chunking |
+| Sidebar API Keys | Enter Databricks and Sarvam keys at runtime — no config files needed |
+| Top 3–5 Standards | With AI rationale and key compliance requirements |
 | Download | Export results as JSON |
+
+---
+
+## Complete RAG Architecture
+
+```
+                         USER INPUT
+                      (text or voice)
+                             │
+             ┌───────────────┴───────────────┐
+             │                               │
+        ✍️ Text Input                  🎙️ Voice Input
+             │                               │
+             │                    ┌──────────▼──────────┐
+             │                    │   Sarvam ASR         │
+             │                    │   saarika:v2.5       │
+             │                    │  (audio → text)      │
+             │                    └──────────┬──────────┘
+             │                               │
+             └───────────────┬───────────────┘
+                             │
+                    Non-English input?
+                       Yes │       No
+                           │        │
+              ┌────────────▼──────┐ │
+              │  Sarvam Translate  │ │
+              │   mayura:v1       │ │
+              │  (lang → English) │ │
+              └────────────┬──────┘ │
+                           └────────┘
+                                │
+                          English Query
+                                │
+                    ┌───────────▼───────────┐
+                    │   Embedding Encoder    │
+                    │  all-MiniLM-L6-v2     │
+                    │  (text → 384-dim vec) │
+                    └───────────┬───────────┘
+                                │
+                    ┌───────────▼───────────┐
+                    │    FAISS Vector DB     │
+                    │   IndexFlatIP          │
+                    │  441 BIS standards     │
+                    │  Cosine similarity     │
+                    │  Top-K retrieval       │
+                    └───────────┬───────────┘
+                                │
+                    Top-K candidate standards
+                    (standard_number, title,
+                     scope, key_requirements)
+                                │
+                    ┌───────────▼───────────┐
+                    │    Databricks LLM      │
+                    │  Llama-3.1-8B-Instruct │
+                    │  OpenAI-compatible API │
+                    │  Generates rationale   │
+                    │  for each standard     │
+                    └───────────┬───────────┘
+                                │
+                      Ranked Results with
+                      Rationale + Key Req.
+                                │
+                    Non-English output?
+                       Yes │       No
+                           │        │
+              ┌────────────▼──────┐ │
+              │  Sarvam Translate  │ │
+              │   mayura:v1       │ │
+              │  (English → lang) │ │
+              └────────────┬──────┘ │
+                           └────────┘
+                                │
+                     Final Ranked Results
+                                │
+              ┌─────────────────┴──────────────────┐
+              │                                    │
+         📄 Display                        🔊 Voice Output
+         (Streamlit UI)              ┌─────────────▼──────────┐
+                                     │   Sarvam TTS            │
+                                     │   bulbul:v2             │
+                                     │  Text split ≤480 chars  │
+                                     │  WAV chunks concatenated│
+                                     └────────────────────────┘
+```
+
+### Pipeline Component Breakdown
+
+| Stage | Component | Model / Tool | Notes |
+|-------|-----------|--------------|-------|
+| Voice Input | Sarvam ASR | saarika:v2.5 | Converts recorded audio to text |
+| Translation IN | Sarvam Translate | mayura:v1 | Any Indian language → English |
+| Embedding | sentence-transformers | all-MiniLM-L6-v2 | 384-dim dense vectors |
+| Vector Search | FAISS | IndexFlatIP | L2-normalised cosine similarity |
+| LLM Rationale | Databricks | Llama-3.1-8B-Instruct | OpenAI-compatible endpoint |
+| Translation OUT | Sarvam Translate | mayura:v1 | English → selected language |
+| Voice Output | Sarvam TTS | bulbul:v2 | WAV chunks joined with `wave` module |
 
 ---
 
@@ -32,26 +129,29 @@ Deploy on [Streamlit Cloud](https://streamlit.io/cloud) (free):
 
 ```
 hackathon/
-├── src/                    # Main application logic
+├── src/
 │   ├── __init__.py
-│   ├── data_loader.py      # Loads BIS standards JSON
-│   ├── embeddings.py       # sentence-transformers encoder
-│   ├── retriever.py        # FAISS vector retriever
-│   ├── llm_client.py       # Groq/LLM rationale generator
-│   ├── translator.py       # Sarvam AI translation + voice
+│   ├── data_loader.py      # Loads bis_standards.json, builds embedding texts
+│   ├── embeddings.py       # sentence-transformers encoder (all-MiniLM-L6-v2)
+│   ├── retriever.py        # FAISS IndexFlatIP vector retriever
+│   ├── llm_client.py       # Databricks/Llama rationale generator
+│   ├── translator.py       # Sarvam AI: translate, STT (saarika:v2.5), TTS (bulbul:v2)
 │   └── rag_pipeline.py     # End-to-end RAG pipeline
 ├── data/
-│   ├── bis_standards.json  # 39 BIS standards dataset
-│   └── sample_queries.json # Sample test queries
-├── faiss_index/            # Auto-generated on first run
+│   ├── bis_standards.json          # 441 BIS standards (generated from CSV)
+│   ├── indian_standards_dataset.csv # Source dataset
+│   └── public_test_set.json        # Sample test queries (hackathon format)
+├── faiss_index/
+│   ├── index.faiss         # Pre-built FAISS index (441 standards)
+│   └── metadata.json       # Standard metadata for retrieval
 ├── .streamlit/
-│   └── config.toml         # Streamlit dark theme
+│   └── secrets.toml        # API key template (not committed)
 ├── app.py                  # Streamlit web application
-├── build_index.py          # Pre-build FAISS index (optional)
-├── inference.py            # Judge entry-point script
-├── eval_script.py          # Evaluation metrics script
+├── build_index.py          # Pre-build FAISS index (run after updating data)
+├── convert_csv.py          # One-time: converts CSV → bis_standards.json
+├── inference.py            # Judge entry-point: --input / --output
+├── eval_script.py          # Evaluation: Hit Rate @3, MRR @5, Avg Latency
 ├── requirements.txt
-├── .env.example
 └── README.md
 ```
 
@@ -64,19 +164,24 @@ hackathon/
 pip install -r requirements.txt
 ```
 
-### 2. Set up API keys
-```bash
-cp .env.example .env
-# Edit .env and add your keys
+### 2. Set API keys
+
+**Option A — Streamlit secrets** (for deployment):
+```toml
+# .streamlit/secrets.toml
+DATABRICKS_TOKEN = "dapi..."
+SARVAM_API_KEY   = "sk-..."
 ```
 
-Or set environment variables:
+**Option B — Environment variables**:
 ```bash
-export GROQ_API_KEY=your_groq_key      # https://console.groq.com (free)
-export SARVAM_API_KEY=your_sarvam_key  # https://dashboard.sarvam.ai
+export DATABRICKS_TOKEN=your_databricks_token
+export SARVAM_API_KEY=your_sarvam_key
 ```
 
-> **Note:** Both keys are optional for basic operation. Without them the system uses rule-based rationale and skips translation/voice.
+**Option C — Sidebar at runtime**: Enter keys directly in the app sidebar. No files needed.
+
+> Both keys are optional for basic operation. Without them the system uses rule-based rationale and skips translation/voice.
 
 ### 3. (Optional) Pre-build FAISS index
 ```bash
@@ -84,7 +189,7 @@ python build_index.py
 ```
 The index is built automatically on first run if not present.
 
-### 4. Run the Streamlit app
+### 4. Run the app
 ```bash
 streamlit run app.py
 ```
@@ -95,50 +200,66 @@ streamlit run app.py
 
 ### Running inference
 ```bash
-python inference.py --input hidden_private_dataset.json --output team_results.json
+python inference.py --input public_test_set.json --output team_results.json --top_k 5
 ```
 
 **Input format:**
 ```json
-[{"id": "q1", "query": "OPC 43 cement for multi-storey building"}, ...]
+[
+  {
+    "id": "PUB-01",
+    "query": "OPC 43 grade cement for multi-storey RCC building",
+    "expected_standards": ["IS 8112:2013"]
+  }
+]
 ```
 
 **Output format:**
 ```json
-[{"id": "q1", "retrieved_standards": ["IS 8112:2013", "IS 456:2000"], "latency_seconds": 0.123}, ...]
+[
+  {
+    "id": "PUB-01",
+    "query": "OPC 43 grade cement for multi-storey RCC building",
+    "expected_standards": ["IS 8112:2013"],
+    "retrieved_standards": ["IS 8112:2013", "IS 269:2015", "IS 12269:2013"],
+    "latency_seconds": 0.84
+  }
+]
 ```
 
 ### Running evaluation
 ```bash
-python eval_script.py --results team_results.json --ground_truth ground_truth.json
+python eval_script.py --results team_results.json
 ```
 
 **Metrics reported:**
-- **Hit Rate @3** — fraction of queries with a correct standard in top-3
-- **MRR @5** — Mean Reciprocal Rank in top-5
-- **Avg Latency** — average response time in seconds
+- **Hit Rate @3** — fraction of queries where a ground-truth standard appears in top-3
+- **MRR @5** — Mean Reciprocal Rank of the first relevant result in top-5
+- **Avg Latency** — average `latency_seconds` across all queries
 
 ---
 
-## BIS Standards Covered
+## BIS Standards Covered (441 total)
 
-### Cement (8 standards)
-IS 269, IS 8112, IS 12269, IS 1489 (P1 & P2), IS 455, IS 6452, IS 12600
-
-### Steel (5 standards)
-IS 1786, IS 432, IS 2062, IS 808, IS 3502
-
-### Concrete (7 standards)
-IS 456, IS 10262, IS 516, IS 9103, IS 3812, IS 13311 (P1 & P2)
-
-### Aggregates (5 standards)
-IS 383, IS 2386 (P1, P3, P4), IS 515
-
-### Masonry (6 standards)
-IS 1077, IS 3952, IS 2185, IS 4139, IS 2212, IS 12894
-
-### Structural/General (8 standards)
-IS 875 (P1, P2, P3), IS 1893, IS 13920, IS 2950, IS 4082
+| Category | Examples |
+|----------|---------|
+| Cement and Concrete | IS 269, IS 8112, IS 12269, IS 1489, IS 456 |
+| Structural Steels | IS 1786, IS 2062, IS 432, IS 808 |
+| Concrete Reinforcement | IS 1139, IS 1566 |
+| Stones | IS 1121, IS 3620 |
+| Wood Products for Building | IS 303, IS 710, IS 1328 |
+| Timber | IS 287, IS 883 |
+| Bitumen and Tar Products | IS 73, IS 217 |
+| Floor, Wall, Roof Coverings | IS 777, IS 1237, IS 13006 |
+| Water Proofing Materials | IS 1322, IS 1580 |
+| Sanitary Appliances & Water Fittings | IS 771, IS 1795, IS 2326 |
+| Glass | IS 2553, IS 5437 |
+| Plastics | IS 4985, IS 12235 |
+| Thermal Insulation | IS 3677, IS 8183 |
+| Conductors and Cables | IS 694, IS 1554 |
+| Doors, Windows and Shutters | IS 1038, IS 4021 |
+| Builder's Hardware | IS 205, IS 729 |
+| + 10 more categories | ... |
 
 ---
 
@@ -147,16 +268,35 @@ IS 875 (P1, P2, P3), IS 1893, IS 13920, IS 2950, IS 4082
 | Component | Technology |
 |-----------|-----------|
 | Frontend | Streamlit |
-| Embeddings | sentence-transformers/all-MiniLM-L6-v2 |
+| Embeddings | sentence-transformers / all-MiniLM-L6-v2 |
 | Vector Store | FAISS IndexFlatIP (cosine similarity) |
-| LLM | Groq API / Llama-3.1-8B-Instant |
-| Translation | Sarvam AI mayura:v1 |
-| ASR (Voice Input) | Sarvam AI saarika:v1 |
-| TTS (Voice Output) | Sarvam AI bulbul:v1 |
+| LLM | Databricks / Llama-3.1-8B-Instruct |
+| Translation | Sarvam AI mayura:v1 (11 Indian languages) |
+| ASR (Voice Input) | Sarvam AI saarika:v2.5 |
+| TTS (Voice Output) | Sarvam AI bulbul:v2 |
+| Deployment | Streamlit Cloud |
+
+---
+
+## Supported Languages
+
+| Language | Code |
+|----------|------|
+| English | en-IN |
+| Hindi | hi-IN |
+| Tamil | ta-IN |
+| Telugu | te-IN |
+| Kannada | kn-IN |
+| Malayalam | ml-IN |
+| Bengali | bn-IN |
+| Marathi | mr-IN |
+| Gujarati | gu-IN |
+| Punjabi | pa-IN |
+| Odia | od-IN |
 
 ---
 
 ## Theme
 **Accelerating MSE Compliance — Automating BIS Standard Discovery**
 
-Hackathon focus: Building Materials (Cement · Steel · Concrete · Aggregates · Masonry)
+Indian Micro and Small Enterprises (MSEs) in the construction materials sector must comply with BIS standards under the BIS Act, 2016. This system removes the manual effort of identifying applicable standards — enter a product description in any Indian language and get the top BIS standards with rationale in seconds.
