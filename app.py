@@ -166,6 +166,8 @@ if "tts_audio" not in st.session_state:
     st.session_state.tts_audio = None
 if "tts_fmt" not in st.session_state:
     st.session_state.tts_fmt = "audio/wav"
+if "voice_transcript" not in st.session_state:
+    st.session_state.voice_transcript = ""
 
 # ─── Imports (after env setup) ───────────────────────────────────────────────
 from src.rag_pipeline import get_pipeline
@@ -255,6 +257,7 @@ with tab1:
         product_description = ""
 
         if input_mode == "✍️ Type":
+            st.session_state.voice_transcript = ""
             placeholder = {
                 "English": "e.g. 43 grade cement for a multi-storey reinforced concrete building",
                 "Hindi": "उदाहरण: बहुमंजिली प्रबलित कंक्रीट इमारत के लिए 43 ग्रेड सीमेंट",
@@ -269,26 +272,22 @@ with tab1:
             product_description = user_text.strip()
 
         else:
-            st.info("🎙️ Record your voice query below. Requires Sarvam AI API key.")
-            try:
-                from audio_recorder_streamlit import audio_recorder
-                audio_bytes = audio_recorder(
-                    text="Click to record",
-                    recording_color="#f97316",
-                    neutral_color="#30363d",
-                    icon_size="2x",
-                )
-                if audio_bytes:
-                    st.audio(audio_bytes, format="audio/wav")
+            st.caption("Click the microphone, speak your query, then click Stop and Transcribe.")
+            recorded = st.audio_input("Record your query", label_visibility="collapsed")
+
+            if recorded is not None:
+                if st.button("📝 Transcribe", use_container_width=True):
                     with st.spinner("Transcribing…"):
-                        transcript = speech_to_text(audio_bytes, lang)
+                        transcript = speech_to_text(recorded.read(), lang)
                     if transcript:
-                        st.success(f"Transcribed: **{transcript}**")
-                        product_description = transcript
+                        st.session_state.voice_transcript = transcript
                     else:
-                        st.warning("Could not transcribe. Check your Sarvam AI key.")
-            except ImportError:
-                st.warning("Install `audio-recorder-streamlit` to enable voice input.")
+                        st.session_state.voice_transcript = ""
+                        st.warning("Could not transcribe audio. Try speaking more clearly.")
+
+            if st.session_state.voice_transcript:
+                st.success(f"Transcribed: **{st.session_state.voice_transcript}**")
+                product_description = st.session_state.voice_transcript
 
         st.markdown("")
         search_clicked = st.button("🔍 Find Applicable BIS Standards", use_container_width=True)

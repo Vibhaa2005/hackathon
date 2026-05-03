@@ -115,10 +115,7 @@ def translate_from_english(text: str, target_lang: str) -> str:
 
 # ── Speech-to-text ───────────────────────────────────────────────────────────
 
-def speech_to_text(audio_bytes: bytes, language: str) -> str:
-    api_key = _get_api_key()
-    if not api_key:
-        return ""
+def _stt_sarvam(audio_bytes: bytes, language: str, api_key: str) -> str:
     lang_code = LANGUAGE_CODES.get(language, "hi-IN")
     try:
         resp = requests.post(
@@ -137,6 +134,27 @@ def speech_to_text(audio_bytes: bytes, language: str) -> str:
     except Exception:
         pass
     return ""
+
+
+def _stt_google(audio_bytes: bytes, language: str) -> str:
+    try:
+        import speech_recognition as sr
+        lang_code = LANGUAGE_CODES.get(language, "hi-IN")
+        r = sr.Recognizer()
+        with sr.AudioFile(io.BytesIO(audio_bytes)) as source:
+            audio = r.record(source)
+        return r.recognize_google(audio, language=lang_code)
+    except Exception:
+        return ""
+
+
+def speech_to_text(audio_bytes: bytes, language: str) -> str:
+    api_key = _get_api_key()
+    if api_key:
+        result = _stt_sarvam(audio_bytes, language, api_key)
+        if result:
+            return result
+    return _stt_google(audio_bytes, language)
 
 
 # ── Text-to-speech ───────────────────────────────────────────────────────────
